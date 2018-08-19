@@ -1,0 +1,20 @@
+\begin{thebibliography}{1}
+
+\bibitem{example-citation}
+Anne Author.
+\newblock {Example Journal Paper Title}.
+\newblock {\em Journal of Classic Examples}, 1(1):e1001745+, January 1970.
+
+\bibitem{wiskott1997face}
+Laurenz Wiskott, Jean-Marc Fellous, Norbert Kr¨¹ger, and Christoph von~der
+  Malsburg.
+\newblock Face recognition by elastic bunch graph matching.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  19:775--779, 1997.
+
+\bibitem{cleggbarker1994}
+D.~Clegg and R.~Barker.
+\newblock {\em {Case method fast-track: a RAD approach}}.
+\newblock {AddisonWesley, Longman Publishing Co., Inc.}, 1994.
+
+\end{thebibliography}

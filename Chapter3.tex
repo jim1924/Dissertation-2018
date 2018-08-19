@@ -1,0 +1,112 @@
+\chapter{Analysis of Requirements}
+\label{chapterlabel3}
+
+
+This Chapter establishes the requirements for this work. The developments of the requirements is a crucial part of the analysis for almost all of the software development projects.
+
+This phase is extremely useful, as for it's flexibility - if things that are unnecessarily complicated are discovered, or are less important to the client, they can be disregarded  or their importance could be downgraded so that they take less time. This is significantly useful for the implementation phase. This is also the easiest time to communicate with the client, while the subject matter is strictly textual, so any major issues or changes to the specifications can be established here.
+
+
+
+\section{Software Requirement Listing and Prioritization}
+\label{sec:softreqlistandprior} 
+
+This stage facilitates a comprehensive understanding of the client's needs and to appreciate the potential complexity of the system. Subsection \ref{sub:functional_req} details the functional requirements of our system.  Functional requirements show the behaviours of the system - what the client wants the system to do.  Subsection \ref{sub:non_functional_req} goes through the non-functional requirements, which affect the system's performance. 
+The requirements were gathered through discussion with the client and also by continually iterating over what the application would be used for, so that additional focus should be given on the user needs.
+
+
+ As mentioned, the requirements have been categorised into functional and non-functional. In subsection \ref{sub:moscow}, they have also been prioritised according to the MoSCoW prioritisation technique \cite{cleggbarker1994}.
+ 
+
+
+\subsection{Functional Requirements}
+\label{sub:functional_req}
+
+\newcounter{magicrownumbers}
+\newcommand\rownumber{\stepcounter{magicrownumbers}\arabic{magicrownumbers}}
+{
+\footnotesize
+%\centering
+\begin{longtable}{|p{0.5cm}|p{10cm}p{1.3cm}p{1.7cm}|}
+
+\rowcolor[HTML]{000000}
+{\color[HTML]{FFFFFF} \textbf{ID}} & {\color[HTML]{FFFFFF} \textbf{Functional Requirements}}  & {\color[HTML]{FFFFFF} \textbf{Priority}} & {\color[HTML]{FFFFFF}  \textbf{Actors}  } \\ \hline \endhead
+\multicolumn{4}{|c|}{\textbf{Account \& Verification}} \\ \hline
+\rownumber & The system shall allow users to create a profile/account &Must & \multicolumn{1}{l|}{All actors} \\ \hline
+\rownumber & The system shall allow users to edit/update their profile details& Must & \multicolumn{1}{l|}{All actors} \\ \hline
+\rownumber & The system shall require all accounts to have a username &Must & \multicolumn{1}{l|}{All actors} \\ \hline
+\rownumber & The system shall require all accounts to have a password &Must & \multicolumn{1}{l|}{All actors} \\ \hline
+\rownumber & The system shall require a user to include contact details for their account &Must& \multicolumn{1}{l|}{All actors} \\ \hline
+\rownumber & The system shall require users to enter their e-mail &Must  & \multicolumn{1}{l|}{All actors} \\ \hline
+\rownumber & The system shall require users to authenticate the e-mail address (via e-mail activation link) &Must  & \multicolumn{1}{l|}{All actors} \\ \hline
+\rownumber & The system shall authenticate the user using their username and password to automatically identify the user type and log them in &Must  & \multicolumn{1}{l|}{All actors} \\ \hline
+\rownumber & The system shall allow users to logout& Must  & \multicolumn{1}{l|}{All actors} \\ \hline
+\rownumber & The system shall require sellers to provide and verify their production location & Must  & \multicolumn{1}{l|}{Seller} \\ \hline
+\rownumber & The system shall allow users to delete their account &Must  & \multicolumn{1}{l|}{All actors} \\ \hline
+\rownumber & The system shall require user to upload a photo of their passport for verification purposes &Should  & \multicolumn{1}{l|}{All actors} \\ \hline
+\rownumber & The system shall allow users to view their purchase history& Should  & \multicolumn{1}{l|}{Buyer} \\ \hline
+\multicolumn{4}{|c|}{\textbf{Allotment/Produce}} \\ \hline
+\rownumber & The system shall require a seller to upload photos of the offered item &Must  & \multicolumn{1}{l|}{Seller} \\ \hline
+\rownumber & The system shall allow a user to add an amount of fruit or veg and list a desired price &Must  & \multicolumn{1}{l|}{Seller} \\ \hline
+\rownumber & The system should display the expiry date of a listed produce item & Must  & \multicolumn{1}{l|}{n/a} \\ \hline
+\rownumber & The system shall provide countdown timer to notify users about produce expiry date &Should  & \multicolumn{1}{l|}{n/a} \\ \hline
+\rownumber & The system shall allow a seller to update a listed item &Should & \multicolumn{1}{l|}{Seller} \\ \hline
+\rownumber & The system shall allow a seller to delete a listed item &Should  & \multicolumn{1}{l|}{Seller} \\ \hline
+\rownumber & The system should notify concerned buyers that an item has been updated or modified &Should & \multicolumn{1}{l|}{Buyer} \\ \hline
+\rownumber & The system shall allow users to photograph their allotment/garden as a ``shop window'' for their produce& Could   & \multicolumn{1}{l|}{Seller} \\ \hline
+\rownumber & The system shall allow users to ask public questions for each produce item &Could  & \multicolumn{1}{l|}{Buyer} \\ \hline
+\rownumber & The system shall notify a buyer when their question has been answered & Could  & \multicolumn{1}{l|}{Buyer} \\ \hline
+\rownumber & The system shall provide automatic moderation of newly listed auctions &Could  & \multicolumn{1}{l|}{n/a} \\ \hline
+\multicolumn{4}{|c|}{\textbf{Offers/Bids}} \\ \hline
+\rownumber & The system shall allow a user to make an offer on fruit or veg that they would like to buy, either in virtual currency or by offering some of their own listed produce &Must  & \multicolumn{1}{l|}{Buyer} \\ \hline
+\rownumber & Users should be notified if other users have made a bid on the same produce &Must  & \multicolumn{1}{l|}{Buyer} \\ \hline
+\rownumber & The system should automatically close the offering once the expiry date has passed &Must  & \multicolumn{1}{l|}{n/a} \\ \hline
+\rownumber & A buyer can withdraw a previously made offer for an item &Should  & \multicolumn{1}{l|}{Buyer} \\ \hline
+\rownumber & The system shall allow a user to see all the offers on their produce and select to sell to or exchange with one of them & Could  & \multicolumn{1}{l|}{Seller} \\ \hline
+\rownumber & The system shall allow users to see other user's bids on an item (with an approximate PipCoin price listed) & Could  & \multicolumn{1}{l|}{Buyer} \\ \hline
+\rownumber & The system shall allow a seller to reject one or more offers.  & Could & \multicolumn{1}{l|}{Seller} \\ \hline
+\multicolumn{4}{|c|}{\textbf{Searching}} \\ \hline
+\rownumber & The system shall allow users to search for fruit or veg, with filters such as location, type of fruit/veg, maximum price etc &Must  & \multicolumn{1}{l|}{Buyer} \\ \hline
+\rownumber & The system shall provide a list view for users to search for local produce &Must  & \multicolumn{1}{l|}{n/a} \\ \hline
+\rownumber & The system shall provide a map view for users to search for local sellers &Could & \multicolumn{1}{l|}{n/a} \\ \hline
+\rownumber & The system shall prioritise (unrelated) items with closest expiry dates in search results & Could & \multicolumn{1}{l|}{n/a} \\ \hline
+\multicolumn{4}{|c|}{\textbf{Communication \& Feedback}} \\ \hline
+\rownumber & The system shall allow users to rate other users &Could  & \multicolumn{1}{l|}{All actors} \\ \hline
+\rownumber & The system shall allow a user to message a confirmed user to arrange the exchange& Could & \multicolumn{1}{l|}{All actors} \\ \hline
+
+\multicolumn{4}{|c|}{\textbf{Additional Requirements}} \\ \hline
+
+\rownumber & The system shall allow a user to pay real money for some website currency (PipCoin), with which they can purchase fruit/veg &Could  & \multicolumn{1}{l|}{All actors} \\ \hline
+\rownumber & The system shall allow a user to see what their fruit/veg is worth in terms of website currency or in terms of other fruit/veg & Could  & \multicolumn{1}{l|}{Seller} \\ \hline
+
+\caption[Functional Requirements]{Functional Requirements} % needs to go inside longtable environment
+\label{functionalreq}
+\end{longtable}
+}
+
+
+
+
+
+
+\subsection{Non Functional Requirements}
+\label{sub:non_functional_req}
+
+\subsection{MoSCoW prioritization}
+\label{sub:moscow}
+
+
+\blindtext
+\section{Domain Modelling}
+\blindtext
+\section{Use Case Analysis}
+\blindtext
+\section{Use Case Diagram}
+\section{Object Oriented Analysis}
+
+% This just dumps some pseudolatin in so you can see some text in place.
+
+
+\blindtext
+\blindtext
+
