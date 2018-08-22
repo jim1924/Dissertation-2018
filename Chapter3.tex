@@ -1,11 +1,16 @@
-\chapter{Analysis of Requirements}
+\chapter{Requirements and Analysis}
 \label{chapterlabel3}
 
 
-This Chapter establishes the requirements for this work. The developments of the requirements is a crucial part of the analysis for almost all of the software development projects.
+This Chapter establishes the requirements and analysis for this work. The developments of the requirements is a crucial part of the analysis for almost all of the software development projects.
 
 This phase is extremely useful, as for it's flexibility - if things that are unnecessarily complicated are discovered, or are less important to the client, they can be disregarded  or their importance could be downgraded so that they take less time. This is significantly useful for the implementation phase. This is also the easiest time to communicate with the client, while the subject matter is strictly textual, so any major issues or changes to the specifications can be established here.
 
+
+\subsection{Problem Statement}
+\label{sub:problem_st}
+
+Design a web based application, that allows surgeons to register an operation, upload and view all the extracted data coming from the operating theatre's sensors.
 
 
 \section{Software Requirement Listing and Prioritization}
@@ -15,7 +20,9 @@ This stage facilitates a comprehensive understanding of the client's needs and t
 The requirements were gathered through discussion with the client and also by continually iterating over what the application would be used for, so that additional focus should be given on the user needs.
 
 
- As mentioned, the requirements have been categorised into functional and non-functional. In subsection \ref{sub:moscow}, they have also been prioritised according to the MoSCoW prioritisation technique \cite{cleggbarker1994}.
+ As mentioned, the requirements have been categorised into functional and non-functional. They have also been prioritised according to the MoSCoW prioritisation technique\cite{cleggbarker1994}, in order to guide the progress of the project and to ensure that a base-level application that achieved the goals of the project. The MoSCoW priorities refer to the order of design and development in order.
+
+
 
 
 \subsection{Functional Requirements}
@@ -26,81 +33,92 @@ The requirements were gathered through discussion with the client and also by co
 {
 \footnotesize
 %\centering
-\begin{longtable}{|p{0.5cm}|p{10cm}p{1.3cm}p{1.7cm}|}
+\begin{longtable}{|p{0.5cm}|p{13cm}p{1.3cm}|}
 
 \rowcolor[HTML]{000000}
-{\color[HTML]{FFFFFF} \textbf{ID}} & {\color[HTML]{FFFFFF} \textbf{Functional Requirements}}  & {\color[HTML]{FFFFFF} \textbf{Priority}} & {\color[HTML]{FFFFFF}  \textbf{Actors}  } \\ \hline \endhead
-\multicolumn{4}{|c|}{\textbf{Account \& Verification}} \\ \hline
-\rownumber & The system shall allow users to create a profile/account &Must & \multicolumn{1}{l|}{All actors} \\ \hline
-\rownumber & The system shall allow users to edit/update their profile details& Must & \multicolumn{1}{l|}{All actors} \\ \hline
-\rownumber & The system shall require all accounts to have a username &Must & \multicolumn{1}{l|}{All actors} \\ \hline
-\rownumber & The system shall require all accounts to have a password &Must & \multicolumn{1}{l|}{All actors} \\ \hline
-\rownumber & The system shall require a user to include contact details for their account &Must& \multicolumn{1}{l|}{All actors} \\ \hline
-\rownumber & The system shall require users to enter their e-mail &Must  & \multicolumn{1}{l|}{All actors} \\ \hline
-\rownumber & The system shall require users to authenticate the e-mail address (via e-mail activation link) &Must  & \multicolumn{1}{l|}{All actors} \\ \hline
-\rownumber & The system shall authenticate the user using their username and password to automatically identify the user type and log them in &Must  & \multicolumn{1}{l|}{All actors} \\ \hline
-\rownumber & The system shall allow users to logout& Must  & \multicolumn{1}{l|}{All actors} \\ \hline
-\rownumber & The system shall require sellers to provide and verify their production location & Must  & \multicolumn{1}{l|}{Seller} \\ \hline
-\rownumber & The system shall allow users to delete their account &Must  & \multicolumn{1}{l|}{All actors} \\ \hline
-\rownumber & The system shall require user to upload a photo of their passport for verification purposes &Should  & \multicolumn{1}{l|}{All actors} \\ \hline
-\rownumber & The system shall allow users to view their purchase history& Should  & \multicolumn{1}{l|}{Buyer} \\ \hline
-\multicolumn{4}{|c|}{\textbf{Allotment/Produce}} \\ \hline
-\rownumber & The system shall require a seller to upload photos of the offered item &Must  & \multicolumn{1}{l|}{Seller} \\ \hline
-\rownumber & The system shall allow a user to add an amount of fruit or veg and list a desired price &Must  & \multicolumn{1}{l|}{Seller} \\ \hline
-\rownumber & The system should display the expiry date of a listed produce item & Must  & \multicolumn{1}{l|}{n/a} \\ \hline
-\rownumber & The system shall provide countdown timer to notify users about produce expiry date &Should  & \multicolumn{1}{l|}{n/a} \\ \hline
-\rownumber & The system shall allow a seller to update a listed item &Should & \multicolumn{1}{l|}{Seller} \\ \hline
-\rownumber & The system shall allow a seller to delete a listed item &Should  & \multicolumn{1}{l|}{Seller} \\ \hline
-\rownumber & The system should notify concerned buyers that an item has been updated or modified &Should & \multicolumn{1}{l|}{Buyer} \\ \hline
-\rownumber & The system shall allow users to photograph their allotment/garden as a ``shop window'' for their produce& Could   & \multicolumn{1}{l|}{Seller} \\ \hline
-\rownumber & The system shall allow users to ask public questions for each produce item &Could  & \multicolumn{1}{l|}{Buyer} \\ \hline
-\rownumber & The system shall notify a buyer when their question has been answered & Could  & \multicolumn{1}{l|}{Buyer} \\ \hline
-\rownumber & The system shall provide automatic moderation of newly listed auctions &Could  & \multicolumn{1}{l|}{n/a} \\ \hline
-\multicolumn{4}{|c|}{\textbf{Offers/Bids}} \\ \hline
-\rownumber & The system shall allow a user to make an offer on fruit or veg that they would like to buy, either in virtual currency or by offering some of their own listed produce &Must  & \multicolumn{1}{l|}{Buyer} \\ \hline
-\rownumber & Users should be notified if other users have made a bid on the same produce &Must  & \multicolumn{1}{l|}{Buyer} \\ \hline
-\rownumber & The system should automatically close the offering once the expiry date has passed &Must  & \multicolumn{1}{l|}{n/a} \\ \hline
-\rownumber & A buyer can withdraw a previously made offer for an item &Should  & \multicolumn{1}{l|}{Buyer} \\ \hline
-\rownumber & The system shall allow a user to see all the offers on their produce and select to sell to or exchange with one of them & Could  & \multicolumn{1}{l|}{Seller} \\ \hline
-\rownumber & The system shall allow users to see other user's bids on an item (with an approximate PipCoin price listed) & Could  & \multicolumn{1}{l|}{Buyer} \\ \hline
-\rownumber & The system shall allow a seller to reject one or more offers.  & Could & \multicolumn{1}{l|}{Seller} \\ \hline
-\multicolumn{4}{|c|}{\textbf{Searching}} \\ \hline
-\rownumber & The system shall allow users to search for fruit or veg, with filters such as location, type of fruit/veg, maximum price etc &Must  & \multicolumn{1}{l|}{Buyer} \\ \hline
-\rownumber & The system shall provide a list view for users to search for local produce &Must  & \multicolumn{1}{l|}{n/a} \\ \hline
-\rownumber & The system shall provide a map view for users to search for local sellers &Could & \multicolumn{1}{l|}{n/a} \\ \hline
-\rownumber & The system shall prioritise (unrelated) items with closest expiry dates in search results & Could & \multicolumn{1}{l|}{n/a} \\ \hline
-\multicolumn{4}{|c|}{\textbf{Communication \& Feedback}} \\ \hline
-\rownumber & The system shall allow users to rate other users &Could  & \multicolumn{1}{l|}{All actors} \\ \hline
-\rownumber & The system shall allow a user to message a confirmed user to arrange the exchange& Could & \multicolumn{1}{l|}{All actors} \\ \hline
+{\color[HTML]{FFFFFF} \textbf{ID}} & {\color[HTML]{FFFFFF} \textbf{Functional Requirements}}  & {\color[HTML]{FFFFFF} \textbf{Priority}} \\ \hline \endhead
+\multicolumn{3}{|c|}{\textbf{Uploading a new Operation}} \\ \hline
+\rownumber & The platform shall support a User Interface that will allow the user to register a new operation &Must  \\ \hline
+\rownumber & The platform shall be able to take as input from the user, the hospital that the operation took place &Must  \\ \hline
+\rownumber & The platform shall be able to take as input from the user, the operating room that the operation took place &Must  \\ \hline
+\rownumber & The platform shall be able to take as input from the user, all the staff that participated in the operation &Must  \\ \hline
+\rownumber & The platform shall be able to take as input from the user, the type of the operation (Neurosurgery, Hand surgery, Paediatric surgery etc.) &Must  \\ \hline
+\rownumber & The platform shall be able to take as input from the user, the specific patient that has undergone the surgery including the patients unique identification number &Must  \\ \hline
+\rownumber & The platform shall be able to take as input from the user, all the video files that were produced during the operation &Must  \\ \hline
+\rownumber & The platform shall be able to take as input from the user, all the audio files that were produced during the operation &Must  \\ \hline
+\rownumber & The platform shall be able to take as input from the user, the file extracted from the patient's monitoring system &Should  \\ \hline
+\rownumber & The platform shall be able to record, store and distinguish data from different operating theatres &Must  \\ \hline
+\rownumber & The platform shall be able to store all the input data from the user to a relational database &Must  \\ \hline
+\rownumber & The platform shall store all the data coming from an operation in a way that all relevant data of the operation could be extracted &Must  \\ \hline
+\rownumber & The platform shall be able to process the video, audio and patients monitoring files uploaded from the user &Must  \\ \hline
+\rownumber & The platform shall be able to extract all the meta-data from the input files (encoded date, size, duration, file type, file name, full file path) &Must  \\ \hline
+\rownumber & The platform shall be able to store the meta-data extracted from the input files, to the relational database &Must  \\ \hline
+\rownumber & The platform shall be able to store the input files to an Azure Blob Storage Account &Must  \\ \hline
+\rownumber & The platform shall be able to link the files stored in the Azure Blob Storage with the relative operation identification number stored in the relational database &Must  \\ \hline
 
-\multicolumn{4}{|c|}{\textbf{Additional Requirements}} \\ \hline
 
-\rownumber & The system shall allow a user to pay real money for some website currency (PipCoin), with which they can purchase fruit/veg &Could  & \multicolumn{1}{l|}{All actors} \\ \hline
-\rownumber & The system shall allow a user to see what their fruit/veg is worth in terms of website currency or in terms of other fruit/veg & Could  & \multicolumn{1}{l|}{Seller} \\ \hline
+\multicolumn{3}{|c|}{\textbf{Searching for an Operation}} \\ \hline
+\rownumber & The platform shall support searching capabilities; the user of the platform must be able to search an operation/procedure using relevant criteria  &Must  \\ \hline
+\rownumber & The platform shall support filtering capabilities where the user can apply specific filters for an operation (hospital name, operating room number, from/to date, doctors name, patient's name, type) &Must  \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{Details of an Operation}} \\ \hline
+\rownumber & The platform shall be able to display a specific page where the user can see all the relative information and details of a specific operation &Must  \\ \hline
+\rownumber & The platform shall be able to retrieve all the relevant data from the operation (video data, microphone data, patient's monitoring system data etc.) &Must  \\ \hline
+\rownumber & The platform shall be able to convert the data coming from the different sensors to easily handled format ( e.g. convert a variety of video input to .avi) &Could  \\ \hline
+\rownumber & The platform shall support the capability of switching to a specific moment in time and view all the recorded data at that moment &Could  \\ \hline
+\rownumber & The platform shall be able to present to the user all the data recorded from the sensors at the same time. For example it could be able to view the panoramic camera, the light camera, the heart rate, the temperature of the room through the common factor of time. &Could  \\ \hline
+\rownumber & The platform shall provide the media files' URL to the user in order for the user to have access to them and re-play them &Must  \\ \hline
 
 \caption[Functional Requirements]{Functional Requirements} % needs to go inside longtable environment
 \label{functionalreq}
 \end{longtable}
 }
 
-
-
-
-
-
 \subsection{Non Functional Requirements}
 \label{sub:non_functional_req}
 
-\subsection{MoSCoW prioritization}
-\label{sub:moscow}
+{\footnotesize
+%\newcommand\rownumber{\stepcounter{magicrownumbers}\arabic{magicrownumbers}}
+%\centering
+\begin{longtable}{|p{0.5cm}|p{13cm}p{1.3cm}|}
+
+\rowcolor[HTML]{000000}
+{\color[HTML]{FFFFFF} \textbf{ID}} &{\color[HTML]{FFFFFF} \textbf{Non-Functional Requirements}}  & {\color[HTML]{FFFFFF} \textbf{Priority}} \\ \hline \endhead
+\rownumber & The platform shall use web browser as its user interface & Must \\ \hline
+\rownumber & The platform shall support new sensor adding or should require minimal work for new, unknown sensor adding & Should \\ \hline
+\rownumber & The platform shall store all the input data in a way that they could be extracted for machine learning purposes (machine learn-able data) & Must \\ \hline
+\rownumber & The platform shall be independent of the format of the input data & Should  \\ \hline
+\rownumber & The platform shall work on a wide range of operating conditions (screen size, internet connection, performance) & Must \\ \hline
+\rownumber & The platform shall be a C\# web application with an MySQL Database & Should \\ \hline
+\rownumber & The System shall present search results within 5 seconds & Should \\ \hline
+
+\caption[Non-Functional Requirements]{Non-Functional Requirements} % needs to go inside longtable environment
+\label{nonfunctionalreq}
+\end{longtable}
+}
 
 
-\blindtext
 \section{Domain Modelling}
-\blindtext
+Following the analysis and establishment of the functional and non-functional requirements in Sections 2.2
+and 2.3, the domain model now presents the conceptual model of the system’s problem domain. To be more
+precise, the classes in this model were initially retrieved from the requirements list, where the identified entities
+are highlighted in bold. A simple domain model draft was created from these entities and duplicates were
+identified and eliminated. Furthermore, items which were deemed unnecessary from this iteration were also
+removed to refine the list of entities. This initial model was then revised and additional domain objects were
+added. Similar to previous analyses, the domain model is therefore the result of an iterative process.
+
+Following the refinement procedure, using the identified entities of the requirements list, the team revised
+the domain model to establish any further domain objects that weren’t in the requirements. The resulting model,
+following the various iterations, is shown in Figure 2.1. It summarises the responsibilities of the system on a general level and was then used to construct the use cases in Chapter 3. Attention was paid to the fact that
+external systems should be modelled as external actors [7], as can be seen from the payment system actor in
+the diagram.
+
+
 \section{Use Case Analysis}
 \blindtext
+
 \section{Use Case Diagram}
+
 \section{Object Oriented Analysis}
 
 % This just dumps some pseudolatin in so you can see some text in place.

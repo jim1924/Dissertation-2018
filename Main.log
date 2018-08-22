@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.13)  19 AUG 2018 21:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.13)  22 AUG 2018 17:28
 entering extended mode
 **./Main.tex
 (Main.tex
@@ -715,7 +715,7 @@ line 93.
 \openout2 = `Preamble.aux'.
 
  (Preamble.tex
-<imgs/ucl_logo.png, id=73, 636.87938pt x 301.125pt>
+<imgs/ucl_logo.png, id=77, 636.87938pt x 301.125pt>
 File: imgs/ucl_logo.png Graphic file (type png)
 <use imgs/ucl_logo.png>
 Package pdftex.def Info: imgs/ucl_logo.png  used on input line 4.
@@ -863,21 +863,29 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  (Chapter3.tex
 Chapter 3.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 10.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 20.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 10.
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 10.
+
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 16.
 \c@magicrownumbers=\count178
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 31.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 39.
 [9
 
 
 
 ]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 80.
- [10] [11] [12]) [13]
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 72.
+ [10]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
+[12]) [13]
 \openout2 = `Chapter4.aux'.
 
  (Chapter4.tex
@@ -951,17 +959,17 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 139.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 139.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 139.
 Package rerunfilecheck Info: File `Main.out' has not changed.
-(rerunfilecheck)             Checksum: 5B3BF8B4DCBB95FA853F0970C9B9B24F;1127.
+(rerunfilecheck)             Checksum: C93B5B840D5716AB2FECDC094B795F11;1198.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 10699 strings out of 493305
- 159576 string characters out of 3138845
- 300529 words of memory out of 3000000
- 13916 multiletter control sequences out of 15000+200000
+ 10705 strings out of 493305
+ 159658 string characters out of 3138845
+ 296669 words of memory out of 3000000
+ 13920 multiletter control sequences out of 15000+200000
  49260 words of font info for 62 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,10n,92p,1110b,520s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -975,9 +983,9 @@ not exist, replaced by a fixed one
 eX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri
 8a.pfb>
-Output written on Main.pdf (29 pages, 111257 bytes).
+Output written on Main.pdf (29 pages, 111941 bytes).
 PDF statistics:
- 257 PDF objects out of 1000 (max. 8388607)
- 53 named destinations out of 1000 (max. 500000)
- 150 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 265 PDF objects out of 1000 (max. 8388607)
+ 55 named destinations out of 1000 (max. 500000)
+ 158 words of extra memory for PDF output out of 10000 (max. 10000000)
 
