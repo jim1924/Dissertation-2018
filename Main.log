@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.13)  22 AUG 2018 17:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.13)  22 AUG 2018 20:24
 entering extended mode
 **./Main.tex
 (Main.tex
@@ -885,31 +885,34 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11]
-[12]) [13]
+<imgs/Domain_Model.png, id=188, 585.83868pt x 324.31163pt>
+File: imgs/Domain_Model.png Graphic file (type png)
+<use imgs/Domain_Model.png>
+Package pdftex.def Info: imgs/Domain_Model.png  used on input line 112.
+(pdftex.def)             Requested size: 483.69684pt x 267.77812pt.
+
+
+Package nag Warning: `center' environment in figure.
+(nag)                Maybe you want \centering instead on input line 113.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12 <./imgs/Domain_Model.png>]) [13]
 \openout2 = `Chapter4.aux'.
 
  (Chapter4.tex
 Chapter 4.
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [14
+) [14
 
 
 
 ]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [15]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [16]
-[17]
 \openout2 = `Chapter5.aux'.
 
  (Chapter5.tex
 Chapter 5.
-) [18
+) [15
 
 
 
@@ -918,7 +921,7 @@ Chapter 5.
 
  (Chapter6.tex
 Chapter 6.
-) [19
+) [16
 
 
 
@@ -927,29 +930,33 @@ Chapter 6.
 
  (Appendices.tex
 Appendix A.
-[20
+[17
 
 
 
 ]
 Appendix B.
-[21
+[18
 
 ]
 Appendix C.
-) [22
+) [19
 
-] (Main.bbl)
+] (Main.bbl
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 23.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+))
 
 Package nag Warning: Package times is obsolete.
 (nag)                Use the mathptmx, helvet (option scaled=.9), courier packa
 ges instead.
 
 
-Package nag Warning: 1 complaints in total.
+Package nag Warning: 2 complaints in total.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 139.
-[23
+[20
 
 
 ]
@@ -966,26 +973,29 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 10705 strings out of 493305
- 159658 string characters out of 3138845
- 296669 words of memory out of 3000000
- 13920 multiletter control sequences out of 15000+200000
- 49260 words of font info for 62 fonts, out of 3000000 for 9000
+ 10748 strings out of 493305
+ 160363 string characters out of 3138845
+ 296948 words of memory out of 3000000
+ 13957 multiletter control sequences out of 15000+200000
+ 49881 words of font info for 64 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,10n,92p,1110b,520s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{cite.cleggbarker1994} has been referenced but doe
-s not exist, replaced by a fixed one
+pdfTeX warning (dest): name{cite.DomainModeling} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.cleggbarker1994} has been referenced but does 
+not exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{cite.wiskott1997face} has been referenced but does 
 not exist, replaced by a fixed one
 
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKT
-eX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri
-8a.pfb>
-Output written on Main.pdf (29 pages, 111941 bytes).
+eX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utm
+r8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Main.pdf (26 pages, 139178 bytes).
 PDF statistics:
- 265 PDF objects out of 1000 (max. 8388607)
+ 266 PDF objects out of 1000 (max. 8388607)
  55 named destinations out of 1000 (max. 500000)
- 158 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 163 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -281,12 +281,12 @@
         \contentsname%
         \@mkboth{\contentsname}{\contentsname}%
     }%    
-    %\thispagestyle{empty}% from SE
+    \thispagestyle{empty}% from SE
     \@starttoc{toc}%
     \if@restonecol%
         \twocolumn%
     \fi%
-    %\thispagestyle{empty}% from SE
+    \thispagestyle{empty}% from SE
 }
 \renewcommand \listoffigures{%
     \if@twocolumn%
@@ -298,12 +298,12 @@
         \listfigurename%
         \@mkboth{\listfigurename}{\listfigurename}%
     }%
-    %\thispagestyle{empty}% taken from SE
+    \thispagestyle{empty}% taken from SE
     \@starttoc{lof}%
     \if@restonecol%
         \twocolumn%
     \fi%
-    %\thispagestyle{empty}%% taken from SE
+    \thispagestyle{empty}%% taken from SE
 }
 \renewcommand \listoftables{%
     \if@twocolumn%
@@ -315,12 +315,12 @@
         \listtablename%
         \@mkboth{\listtablename}{\listtablename}%
     }%
-    %\thispagestyle{empty}%% taken from SE
+    \thispagestyle{empty}%% taken from SE
     \@starttoc{lot}%
     \if@restonecol%
         \twocolumn%
     \fi%
-    %\thispagestyle{empty}%% taken from SE
+    \thispagestyle{empty}%% taken from SE
 }
 \renewenvironment{thebibliography}[1]{%
     \chapter*{%
@@ -578,7 +578,7 @@ acknowledged.
 \newcommand \@abstract{Abstract}
 \newenvironment{abstract}{%
     \chapter*{\@abstract}%    
-    %\thispagestyle{empty} %AGAIN FROM SE
+    \thispagestyle{empty} %AGAIN FROM SE
     \@mkboth{\@abstract}{\@abstract}%
 }{%
 }

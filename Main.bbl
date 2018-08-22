@@ -17,4 +17,10 @@ D.~Clegg and R.~Barker.
 \newblock {\em {Case method fast-track: a RAD approach}}.
 \newblock {AddisonWesley, Longman Publishing Co., Inc.}, 1994.
 
+\bibitem{DomainModeling}
+Domain modeling.
+\newblock Available at:
+  \url{https://www.scaledagileframework.com/domain-modeling}, September 2017.
+\newblock Accessed: [12 June 2018].
+
 \end{thebibliography}
