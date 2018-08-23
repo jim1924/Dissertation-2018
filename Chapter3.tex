@@ -7,8 +7,8 @@ This Chapter establishes the requirements and analysis for this work. The develo
 This phase is extremely useful, as for it's flexibility - if things that are unnecessarily complicated are discovered, or are less important to the client, they can be disregarded  or their importance could be downgraded so that they take less time. This is significantly useful for the implementation phase. This is also the easiest time to communicate with the client, while the subject matter is strictly textual, so any major issues or changes to the specifications can be established here.
 
 
-\subsection{Problem Statement}
-\label{sub:problem_st}
+\section{Problem Statement}
+\label{problem_st}
 
 Design a web based application, that allows surgeons to register an operation, upload and view all the extracted data coming from the operating theatre's sensors.
 
@@ -16,11 +16,11 @@ Design a web based application, that allows surgeons to register an operation, u
 \section{Software Requirement Listing and Prioritization}
 \label{sec:softreqlistandprior} 
 
-This stage facilitates a comprehensive understanding of the client's needs and to appreciate the potential complexity of the system. Subsection \ref{sub:functional_req} details the functional requirements of our system.  Functional requirements show the behaviours of the system - what the client wants the system to do.  Subsection \ref{sub:non_functional_req} goes through the non-functional requirements, which affect the system's performance. 
+This stage facilitates a comprehensive understanding of the client's needs and to appreciate the potential complexity of the system. Subsection \ref{sub:functional_req} details the functional requirements of our system.  Functional requirements show the behaviours of the system - what the client wants the system to do.  Subsection \ref{sub:non_functional_req} goes through the non-functional requirements, which affect the system's performance . 
 The requirements were gathered through discussion with the client and also by continually iterating over what the application would be used for, so that additional focus should be given on the user needs.
 
 
- As mentioned, the requirements have been categorised into functional and non-functional. They have also been prioritised according to the MoSCoW prioritisation technique\cite{cleggbarker1994}, in order to guide the progress of the project and to ensure that a base-level application that achieved the goals of the project. The MoSCoW priorities refer to the order of design and development in order.
+ As mentioned, the requirements have been divided into functional and non-functional \cite{Software_Requirements}. They have also been prioritised according to the MoSCoW prioritisation technique\cite{cleggbarker1994}, in order to guide the progress of the project and to ensure that a base-level application that achieved the goals of the project. The MoSCoW priorities refer to the order of design and development in order. Must have, Should Have, Could Have, and Won't have requirements.
 
 
 
@@ -99,6 +99,7 @@ The requirements were gathered through discussion with the client and also by co
 
 
 \section{Domain Modelling}
+\label{sec:DomainModelling}
 The domain model looks to identify the objects of a system in terms of the requirements. It provides a conceptual real-world view of the system and enables a simplistic overview of the system's functionalities in terms of the problem domain entities \cite{DomainModeling}.
 More specifically, the classes were derived from the requirements list where the identified entities were marked in bold. Therefore, it is now possible to create a simple draft domain model from these entities. Furthermore, objects which were deemed redundant from this iteration were also
 discarded to refine the list of entities. This initial model was then revised and additional domain objects were
@@ -119,17 +120,102 @@ Figure \ref{domain_model} shows the model that resulted after the various iterat
 \section{Use Case Analysis}
 \label{sub:use_case_analysis}
 
-Following the domain modelling and the gathering of requirements analysed in subsections \ref{domain_model}, \ref{functionalreq} and \ref{nonfunctionalreq} respectively, use cases were developed. The defined domain entities and requirements were used to construct the use cases and their basic relationships. The construction of the uses cases allows the solid organisation of the functional requirements of the project, in order to make sure that they meet the front-end requirements and also to make sure that they are fully encompassing. The use cases describe all of the actions that are relevant to the recognised users \citep{usecases}. Those use cases were updated several times, refined and modified, for example, by merging them together or splitting them up if they include too many or too few actions.
+Following the domain modelling and the gathering of requirements analysed in sections \ref{sec:DomainModelling} and \ref{sec:softreqlistandprior} respectively, use cases were developed. The defined domain entities and requirements were used to construct the use cases and their basic relationships. The construction of the uses cases allows the solid organisation of the functional requirements of the project, in order to make sure that they meet the front-end requirements and also to make sure that they are fully encompassing. A use case describes a scenario where a user interacts with the application in order to achieve a specific outcome \cite{usecases3}. Use cases are described from the users point of view rather than a technical point of view. As such, use cases are very effective at visualising and communicating the final product to the client and incorporating the client's voice into the requirements of the project \cite{usecases2}.
 
-A complete overview of the identified use cases is shown in  Table \textcolor{yellow}{BLABLABLA} and from Table \textcolor{yellow}{BLABLABLA} to Table \textcolor{yellow}{BLABLABLA}, all the detailed specification for each use case are shown. Each specification includes details of each use case,the main flows, error flows, post-conditions, pre-conditions and the trigger event.
+A complete overview of the identified use cases is shown in  Table \ref{UC-Summary} and from Table \ref{UC01} to Table \ref{UC03}, all the detailed specification for each use case are shown. Each specification includes details of each use case,the main flows, error flows, post-conditions, pre-conditions and the trigger event.
 
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|
+>{\columncolor[HTML]{C0C0C0}}p{1.5cm}|p{8cm}|}
+\hline
+\textbf{ID} & \cellcolor[HTML]{C0C0C0}\textbf{Use Case}  \\ \hline
+UC01        & \textbf{Upload a new operation}                           \\ \hline
+UC02        & \textbf{Search for an operation}                             \\ \hline
+UC03        & \textbf{View operation detals}                                                         \\ \hline
+\end{tabular}
+\caption[Use Case Listing]{List of use cases}
+\label{UC-Summary}
+\end{table}
+
+
+\begin{table}[h]
+\footnotesize
+\centering
+\begin{tabular}{|
+>{\columncolor[HTML]{C0C0C0}}p{2.7cm}|p{12cm}|}
+\hline
+Use Case          & Upload a new operation \\ \hline
+ID                & UC01                                                                                                                                                                                                                                                                                          \\ \hline
+Brief Description & The user wishes to register the operation to the System                                                                                                                                                                                                                         \\ \hline
+Preconditions     & User must have all the necessary files and information of the operation                                                                                                                                                                                                                                         \\ \hline
+Main Flow         & \begin{tabular}[c]{@{}l@{}}1. Home page is displayed\\ 2. The User selects to register a new operation\\ 3. The User enters the hospital name \\ 4. The User enters the operating room number \\ 5. The User enters all the staff that participated in the operation\\6. The User enters the patient that underwent the surgery\\ 7. The User enters the type of the operation\\ 8. The User selects all the relevant video files \\9. The User selects all the relevant audio files \\10. The User selects the patient's monitoring file \end{tabular}                                                                      \\ \hline
+Post Conditions   & A new operation has been registered to the database and the files have been uploaded to the file storage                                                                                                                                                                                                                                                        \\ \hline
+Alternative Flows & The User no longer wishes to upload yet the operation to the System and cancels the registration of the operation                                                                                                                                                                                                        \\ \hline
+Error Flow        & \begin{tabular}[c]{@{}l@{}}1. The User does not enter any of the 1-7 fields and at least one input file \\ 2. An error message is displayed \end{tabular} \\ \hline
+Trigger Event     & The user chooses to add new operation \\ \hline
+\end{tabular}
+\caption[Use Case 01 - Upload a new operation]{Use Case 01 - Upload a new operation}
+\label{UC01}
+\end{table}
+
+
+\begin{table}[h]
+\footnotesize
+\centering
+\begin{tabular}{|
+>{\columncolor[HTML]{C0C0C0}}p{2.7cm}|p{12cm}|}
+\hline
+Use Case          & Search for an operation \\ \hline
+ID                & UC02                                                                                                                                                                                                                                                                                          \\ \hline
+Brief Description & The User wishes to find an operation from the database \\ \hline
+Preconditions     & At least one operation must have been registered to the system \\ \hline
+Main Flow         & \begin{tabular}[c]{@{}l@{}}1. Home page is displayed\\ 2. The 20 most recent uploaded operations are displayed\\ 3. The User uses the Filters to input hospital name,operating room number,\\ from/to date and participated staff  \\ 4. The filtered results are displayed, ordered by date (from most recent to oldest) \end{tabular}                                                                      \\ \hline
+Post Conditions   & The User can see the Operations that correspond to the Filters they have applied \\ \hline
+Alternative Flows & The Operation that the User searches for and the Filters applied produce no results \\ \hline
+Error Flow        &  None \\ \hline
+Trigger Event     & The User wishes to Search for an Operation \\ \hline
+\end{tabular}
+\caption[Use Case 02 - Search for an operation]{Use Case 02 - Search for an operation}
+\label{UC02}
+\end{table}
+
+
+\begin{table}[h]
+\footnotesize
+\centering
+\begin{tabular}{|
+>{\columncolor[HTML]{C0C0C0}}p{2.7cm}|p{12cm}|}
+\hline
+Use Case          & View operation details \\ \hline
+ID                & UC03 \\ \hline
+Brief Description & The User can view the details of an Operation \\ \hline
+Preconditions    & \begin{tabular}[c]{@{}l@{}}1. At least one operation must have been registered\\ 2. The User must have searched for an Operation\\  \end{tabular}                                                                      \\ \hline
+Main Flow         & \begin{tabular}[c]{@{}l@{}}1. Home page is displayed\\ 2. The User searches for an Operation\\ 3. The User views the filtered results  \\ 4. The User selects the desired Operation \\ 5.The User views the Operation details \end{tabular}                                                                      \\ \hline
+Post Conditions   & The Operation details are displayed to the User \\ \hline
+Alternative Flows & The User does not wish to view the Operation details and so goes back to the homepage \\ \hline
+Error Flow        &  System fails to report Operation Details \\ \hline
+Trigger Event     & The User wishes to view the details of a listed Operation \\ \hline
+\end{tabular}
+\caption[Use Case 03 - View operation details]{Use Case 03 - View operation details}
+\label{UC03}
+\end{table}
 
 
 \section{Use Case Diagram}
 \label{sub:use_case_diagram}
 
 
-The use case diagram which is depicted in Figure \textcolor{yellow}{BLABLABLA} is derived from the use case Listing which is basic foundation for the creation of the use case diagram.
+The use case diagram which is depicted in Figure \ref{UC-diagram} is derived from the use case Listing which is basic foundation for the creation of the use case diagram.
+
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=17cm]{imgs/Use_Case_Diagram.png}
+\end{center}\vspace{-0.3cm}
+\caption[Use Case Diagram]{Use case diagram} \label{UC-diagram}
+\end{figure}
 
 
 \section{Object Oriented Analysis}

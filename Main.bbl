@@ -12,6 +12,11 @@ Laurenz Wiskott, Jean-Marc Fellous, Norbert Kr¨¹ger, and Christoph von~der
 \newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
   19:775--779, 1997.
 
+\bibitem{Software_Requirements}
+Karl Wiegers and Joy Beatty.
+\newblock {\em {Software Requirements, 3rd Edition}}.
+\newblock {Microsoft Press}, 2013.
+
 \bibitem{cleggbarker1994}
 D.~Clegg and R.~Barker.
 \newblock {\em {Case method fast-track: a RAD approach}}.
@@ -22,5 +27,18 @@ Domain modeling.
 \newblock Available at:
   \url{https://www.scaledagileframework.com/domain-modeling}, September 2017.
 \newblock Accessed: [12 June 2018].
+
+\bibitem{usecases3}
+Ivar Jacobson.
+\newblock {\em {Object Oriented Software Engineering: A Use Case Driven
+  Approach: A Use CASE Approach (ACM Press)}}.
+\newblock {Addison-Wesley Professional}, 1992.
+
+\bibitem{usecases2}
+Karl~E. Wiegers.
+\newblock Listening to the customer's voice.
+\newblock Available at:
+  \url{http://www.processimpact.com/articles/usecase.pdf}, 1997.
+\newblock Accessed: [11 July 2018].
 
 \end{thebibliography}
