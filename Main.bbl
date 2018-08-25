@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{1}
 
 \bibitem{example-citation}
 Anne Author.
@@ -41,21 +41,20 @@ Karl~E. Wiegers.
   \url{http://www.processimpact.com/articles/usecase.pdf}, 1997.
 \newblock Accessed: [11 July 2018].
 
-\bibitem{objectManagementGroup}
-{\em {Object Management Group, "UML Version 2.0, "Object Management Group, Inc,
-  2.0}}.
-\newblock March 2006.
-
-\bibitem{principlesOfAgile}
-S.~W. Ambler.
-\newblock The principles of agile modeling (am).
+\bibitem{aspNetStructure}
+Stephen~Halter Tom~Dykstra, Steve~Smith and Chris Ross.
+\newblock Web server implementations in asp.net core.
 \newblock Available at:
-  \url{http://agilemodeling.com/principles.htm\#ContentIsMoreImportantThanRepresentation}.
+  \url{https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/?view=aspnetcore-2.1&tabs=aspnetcore2x},
+  March 2018.
 \newblock Accessed: [12 July 2018].
 
-\bibitem{Managing_Information}
-Ivan Hollingworth \& Peter~Flett Adrienne~Curry.
-\newblock {\em {Managing Information \& Systems: The Business Perspective}}.
-\newblock {Rootledge}, 2006.
+\bibitem{mvc}
+Steve Smith.
+\newblock What is the mvc pattern?
+\newblock Available at:
+  \url{https://docs.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-2.1\#routing},
+  August 2018.
+\newblock Accessed: [15 August 2018].
 
 \end{thebibliography}

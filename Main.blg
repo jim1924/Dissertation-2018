@@ -14,8 +14,8 @@ Warning--entry type for "DomainModeling" isn't style-file defined
 --line 15 of file bibliography.bib
 Warning--entry type for "usecases2" isn't style-file defined
 --line 31 of file bibliography.bib
-Warning--entry type for "principlesOfAgile" isn't style-file defined
---line 52 of file bibliography.bib
-Warning--empty author and editor in objectManagementGroup
-Warning--empty publisher in objectManagementGroup
-(There were 5 warnings)
+Warning--entry type for "aspNetStructure" isn't style-file defined
+--line 46 of file bibliography.bib
+Warning--entry type for "mvc" isn't style-file defined
+--line 55 of file bibliography.bib
+(There were 4 warnings)

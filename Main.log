@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.13)  25 AUG 2018 15:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.13)  25 AUG 2018 20:48
 entering extended mode
 **./Main.tex
 (Main.tex
@@ -604,11 +604,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip59
 ))
 (FloatSettings.tex) (Main.aux (Preamble.aux) (Chapter1.aux) (Chapter2.aux)
-(Chapter3.aux) (Chapter4.aux
-
-LaTeX Warning: Label `chapterlabel3' multiply defined.
-
-) (Chapter5.aux) (Chapter6.aux) (Chapter7.aux) (Appendices.aux))
+(Chapter3.aux) (Chapter4.aux) (Chapter5.aux) (Chapter6.aux) (Chapter7.aux)
+(Appendices.aux))
 \openout1 = `Main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
@@ -625,8 +622,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
 LaTeX Font Info:    ... okay on input line 93.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 93.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 93.
@@ -716,7 +712,7 @@ line 93.
 \openout2 = `Preamble.aux'.
 
  (Preamble.tex
-<imgs/ucl_logo.png, id=85, 636.87938pt x 301.125pt>
+<imgs/ucl_logo.png, id=97, 636.87938pt x 301.125pt>
 File: imgs/ucl_logo.png Graphic file (type png)
 <use imgs/ucl_logo.png>
 Package pdftex.def Info: imgs/ucl_logo.png  used on input line 4.
@@ -773,24 +769,24 @@ LaTeX Font Info:    Try loading font information for TS1+ptm on input line 4.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ts1ptm.fd"
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-))
+) [4
+
+])
 \tf@toc=\write4
 \openout4 = `Main.toc'.
 
- [4
-
-] (Main.lof)
+ [5] (Main.lof)
 \tf@lof=\write5
 \openout5 = `Main.lof'.
 
 
-[5
+[6
 
 ] (Main.lot)
 \tf@lot=\write6
 \openout6 = `Main.lot'.
 
-) [6
+) [7
 
 ]
 \openout2 = `Chapter1.aux'.
@@ -868,8 +864,13 @@ l.74 \end{longtable}
                      [6]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7]
-<imgs/Domain_Model.png, id=200, 585.83868pt x 324.31163pt>
+pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.107 
+       [7]
+<imgs/Domain_Model.png, id=224, 585.83868pt x 324.31163pt>
 File: imgs/Domain_Model.png Graphic file (type png)
 <use imgs/Domain_Model.png>
 Package pdftex.def Info: imgs/Domain_Model.png  used on input line 113.
@@ -896,7 +897,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imgs/Use_Case_Diagram.png, id=214, 352.31625pt x 280.04625pt>
+<imgs/Use_Case_Diagram.png, id=238, 352.31625pt x 280.04625pt>
 File: imgs/Use_Case_Diagram.png Graphic file (type png)
 <use imgs/Use_Case_Diagram.png>
 Package pdftex.def Info: imgs/Use_Case_Diagram.png  used on input line 215.
@@ -910,7 +911,7 @@ Package nag Warning: `center' environment in figure.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [10]
-<imgs/Add_New_Operation.png, id=225, 627.84563pt x 542.025pt>
+<imgs/Add_New_Operation.png, id=249, 627.84563pt x 542.025pt>
 File: imgs/Add_New_Operation.png Graphic file (type png)
 <use imgs/Add_New_Operation.png>
 Package pdftex.def Info: imgs/Add_New_Operation.png  used on input line 235.
@@ -923,7 +924,7 @@ Package nag Warning: `center' environment in figure.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imgs/Search_For_Operation.png, id=227, 634.62094pt x 477.28313pt>
+<imgs/Search_For_Operation.png, id=251, 634.62094pt x 477.28313pt>
 File: imgs/Search_For_Operation.png Graphic file (type png)
 <use imgs/Search_For_Operation.png>
 Package pdftex.def Info: imgs/Search_For_Operation.png  used on input line 242.
@@ -936,7 +937,7 @@ Package nag Warning: `center' environment in figure.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imgs/Operation_Details.png, id=228, 627.09282pt x 542.025pt>
+<imgs/Operation_Details.png, id=252, 627.09282pt x 542.025pt>
 File: imgs/Operation_Details.png Graphic file (type png)
 <use imgs/Operation_Details.png>
 Package pdftex.def Info: imgs/Operation_Details.png  used on input line 249.
@@ -955,16 +956,48 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 (Chapter4.tex
 Chapter 4.
-) [15
+<imgs/asp_structure.jpg, id=276, 334.24875pt x 78.2925pt>
+File: imgs/asp_structure.jpg Graphic file (type jpg)
+<use imgs/asp_structure.jpg>
+Package pdftex.def Info: imgs/asp_structure.jpg  used on input line 18.
+(pdftex.def)             Requested size: 483.69684pt x 113.30736pt.
+
+Package nag Warning: `center' environment in figure.
+(nag)                Maybe you want \centering instead on input line 19.
+
+[15
 
 
 
-]
+ <./imgs/asp_structure.jpg>]
+<imgs/Application_Structure.png, id=283, 963.6pt x 542.025pt>
+File: imgs/Application_Structure.png Graphic file (type png)
+<use imgs/Application_Structure.png>
+Package pdftex.def Info: imgs/Application_Structure.png  used on input line 38.
+
+(pdftex.def)             Requested size: 483.69684pt x 272.07874pt.
+
+
+Package nag Warning: `center' environment in figure.
+(nag)                Maybe you want \centering instead on input line 39.
+
+[16 <./imgs/Application_Structure.png>]
+<imgs/mvc.png, id=293, 385.44pt x 245.718pt>
+File: imgs/mvc.png Graphic file (type png)
+<use imgs/mvc.png>
+Package pdftex.def Info: imgs/mvc.png  used on input line 59.
+(pdftex.def)             Requested size: 483.69684pt x 308.35777pt.
+
+
+Package nag Warning: `center' environment in figure.
+(nag)                Maybe you want \centering instead on input line 60.
+
+) [17 <./imgs/mvc.png>]
 \openout2 = `Chapter5.aux'.
 
  (Chapter5.tex
 Chapter 5.
-) [16
+) [18
 
 
 
@@ -973,7 +1006,7 @@ Chapter 5.
 
  (Chapter6.tex
 Chapter 6.
-) [17
+) [19
 
 
 
@@ -982,7 +1015,7 @@ Chapter 6.
 
  (Chapter7.tex
 Chapter 7.
-) [18
+) [20
 
 
 
@@ -991,17 +1024,17 @@ Chapter 7.
 
  (Appendices.tex
 Appendix A.
-[19
+[21
 
 
 
 ]
 Appendix B.
-[20
+[22
 
 ]
 Appendix C.
-) [21
+) [23
 
 ] (Main.bbl
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 28.
@@ -1014,10 +1047,10 @@ Package nag Warning: Package times is obsolete.
 ges instead.
 
 
-Package nag Warning: 6 complaints in total.
+Package nag Warning: 9 complaints in total.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 140.
-[22
+[24
 
 
 ]
@@ -1027,28 +1060,21 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 140.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 140.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 140.
 Package rerunfilecheck Info: File `Main.out' has not changed.
-(rerunfilecheck)             Checksum: 72BE251FB1A912E3FA6F32773A8F51D0;1290.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
+(rerunfilecheck)             Checksum: F55F67098420E0EA68980C48D1EC9E17;1506.
  ) 
 Here is how much of TeX's memory you used:
- 10850 strings out of 493305
- 162457 string characters out of 3138845
- 296522 words of memory out of 3000000
- 14024 multiletter control sequences out of 15000+200000
+ 10883 strings out of 493305
+ 162948 string characters out of 3138845
+ 296782 words of memory out of 3000000
+ 14043 multiletter control sequences out of 15000+200000
  58953 words of font info for 85 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,18n,92p,1110b,520s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{cite.Managing_Information} has been referenced bu
-t does not exist, replaced by a fixed one
+pdfTeX warning (dest): name{cite.mvc} has been referenced but does not exist,
+ replaced by a fixed one
 
-pdfTeX warning (dest): name{cite.principlesOfAgile} has been referenced but doe
-s not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.objectManagementGroup} has been referenced but
- does not exist, replaced by a fixed one
+pdfTeX warning (dest): name{cite.aspNetStructure} has been referenced but does 
+not exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{cite.usecases2} has been referenced but does not ex
 ist, replaced by a fixed one
@@ -1072,9 +1098,9 @@ not exist, replaced by a fixed one
 eX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
 pe1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utm
 r8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Main.pdf (28 pages, 254398 bytes).
+Output written on Main.pdf (31 pages, 1331883 bytes).
 PDF statistics:
- 340 PDF objects out of 1000 (max. 8388607)
- 79 named destinations out of 1000 (max. 500000)
- 199 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 384 PDF objects out of 1000 (max. 8388607)
+ 89 named destinations out of 1000 (max. 500000)
+ 238 words of extra memory for PDF output out of 10000 (max. 10000000)
 
