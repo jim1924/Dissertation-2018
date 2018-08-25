@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{example-citation}
 Anne Author.
@@ -40,5 +40,22 @@ Karl~E. Wiegers.
 \newblock Available at:
   \url{http://www.processimpact.com/articles/usecase.pdf}, 1997.
 \newblock Accessed: [11 July 2018].
+
+\bibitem{objectManagementGroup}
+{\em {Object Management Group, "UML Version 2.0, "Object Management Group, Inc,
+  2.0}}.
+\newblock March 2006.
+
+\bibitem{principlesOfAgile}
+S.~W. Ambler.
+\newblock The principles of agile modeling (am).
+\newblock Available at:
+  \url{http://agilemodeling.com/principles.htm\#ContentIsMoreImportantThanRepresentation}.
+\newblock Accessed: [12 July 2018].
+
+\bibitem{Managing_Information}
+Ivan Hollingworth \& Peter~Flett Adrienne~Curry.
+\newblock {\em {Managing Information \& Systems: The Business Perspective}}.
+\newblock {Rootledge}, 2006.
 
 \end{thebibliography}

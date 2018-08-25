@@ -10,6 +10,7 @@
 \contentsline {section}{\numberline {3.5}Use Case Diagram}{10}{section.3.5}
 \contentsline {section}{\numberline {3.6}Mock-ups}{10}{section.3.6}
 \contentsline {chapter}{\numberline {4}Design}{15}{chapter.4}
+\contentsline {section}{\numberline {4.1}Architecture and System Structure}{15}{section.4.1}
 \contentsline {chapter}{\numberline {5}Implementation}{16}{chapter.5}
 \contentsline {chapter}{\numberline {6}Testing}{17}{chapter.6}
 \contentsline {chapter}{\numberline {7}Conclusion and Project evaluation}{18}{chapter.7}

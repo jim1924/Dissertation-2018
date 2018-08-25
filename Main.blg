@@ -6,6 +6,7 @@ A level-1 auxiliary file: Chapter3.aux
 A level-1 auxiliary file: Chapter4.aux
 A level-1 auxiliary file: Chapter5.aux
 A level-1 auxiliary file: Chapter6.aux
+A level-1 auxiliary file: Chapter7.aux
 A level-1 auxiliary file: Appendices.aux
 The style file: unsrt.bst
 Database file #1: bibliography.bib
@@ -13,4 +14,8 @@ Warning--entry type for "DomainModeling" isn't style-file defined
 --line 15 of file bibliography.bib
 Warning--entry type for "usecases2" isn't style-file defined
 --line 31 of file bibliography.bib
-(There were 2 warnings)
+Warning--entry type for "principlesOfAgile" isn't style-file defined
+--line 52 of file bibliography.bib
+Warning--empty author and editor in objectManagementGroup
+Warning--empty publisher in objectManagementGroup
+(There were 5 warnings)
