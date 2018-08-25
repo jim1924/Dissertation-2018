@@ -1,18 +1,19 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {chapter}{\numberline {2}Background Information}{5}{chapter.2}
-\contentsline {chapter}{\numberline {3}Requirements and Analysis}{9}{chapter.3}
-\contentsline {section}{\numberline {3.1}Problem Statement}{9}{section.3.1}
-\contentsline {section}{\numberline {3.2}Software Requirement Listing and Prioritization}{9}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Functional Requirements}{10}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Non Functional Requirements}{11}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Domain Modelling}{12}{section.3.3}
-\contentsline {section}{\numberline {3.4}Use Case Analysis}{13}{section.3.4}
-\contentsline {section}{\numberline {3.5}Use Case Diagram}{14}{section.3.5}
-\contentsline {section}{\numberline {3.6}List of Views}{14}{section.3.6}
-\contentsline {chapter}{\numberline {4}Design and Implementation}{16}{chapter.4}
-\contentsline {chapter}{\numberline {5}Testing}{17}{chapter.5}
-\contentsline {chapter}{\numberline {6}Conclusion and Project evaluation}{18}{chapter.6}
-\contentsline {chapter}{Appendices}{19}{chapter.6}
+\contentsline {chapter}{\numberline {2}Background Information}{3}{chapter.2}
+\contentsline {chapter}{\numberline {3}Requirements and Analysis}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Problem Statement}{5}{section.3.1}
+\contentsline {section}{\numberline {3.2}Software Requirement Listing and Prioritization}{5}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Functional Requirements}{6}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Non Functional Requirements}{7}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Domain Modelling}{8}{section.3.3}
+\contentsline {section}{\numberline {3.4}Use Case Analysis}{9}{section.3.4}
+\contentsline {section}{\numberline {3.5}Use Case Diagram}{10}{section.3.5}
+\contentsline {section}{\numberline {3.6}Mock-ups}{10}{section.3.6}
+\contentsline {chapter}{\numberline {4}Design}{15}{chapter.4}
+\contentsline {chapter}{\numberline {5}Implementation}{16}{chapter.5}
+\contentsline {chapter}{\numberline {6}Testing}{17}{chapter.6}
+\contentsline {chapter}{\numberline {7}Conclusion and Project evaluation}{18}{chapter.7}
+\contentsline {chapter}{Appendices}{19}{chapter.7}
 \contentsline {chapter}{\numberline {A}An Appendix About Stuff}{19}{appendix.A}
 \contentsline {chapter}{\numberline {B}Another Appendix About Things}{20}{appendix.B}
 \contentsline {chapter}{\numberline {C}Colophon}{21}{appendix.C}
