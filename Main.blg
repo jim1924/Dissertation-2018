@@ -6,7 +6,6 @@ A level-1 auxiliary file: Chapter3.aux
 A level-1 auxiliary file: Chapter4.aux
 A level-1 auxiliary file: Chapter5.aux
 A level-1 auxiliary file: Chapter6.aux
-A level-1 auxiliary file: Chapter7.aux
 A level-1 auxiliary file: Appendices.aux
 The style file: unsrt.bst
 Database file #1: bibliography.bib
@@ -18,4 +17,8 @@ Warning--entry type for "aspNetStructure" isn't style-file defined
 --line 46 of file bibliography.bib
 Warning--entry type for "mvc" isn't style-file defined
 --line 55 of file bibliography.bib
-(There were 4 warnings)
+Warning--entry type for "separationOfConcerns" isn't style-file defined
+--line 75 of file bibliography.bib
+Warning--entry type for "modelBinding" isn't style-file defined
+--line 119 of file bibliography.bib
+(There were 6 warnings)

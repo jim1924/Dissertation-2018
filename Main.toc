@@ -9,16 +9,23 @@
 \contentsline {section}{\numberline {3.4}Use Case Analysis}{9}{section.3.4}
 \contentsline {section}{\numberline {3.5}Use Case Diagram}{10}{section.3.5}
 \contentsline {section}{\numberline {3.6}Mock-ups}{10}{section.3.6}
-\contentsline {chapter}{\numberline {4}Design}{15}{chapter.4}
+\contentsline {chapter}{\numberline {4}Design and Implementation}{15}{chapter.4}
 \contentsline {section}{\numberline {4.1}Architecture and System Structure}{15}{section.4.1}
 \contentsline {section}{\numberline {4.2}Model-View-Controller Pattern}{16}{section.4.2}
-\contentsline {section}{\numberline {4.3}Design Class Diagram}{17}{section.4.3}
-\contentsline {section}{\numberline {4.4}Database Design and ERD}{17}{section.4.4}
-\contentsline {chapter}{\numberline {5}Implementation}{18}{chapter.5}
-\contentsline {chapter}{\numberline {6}Testing}{19}{chapter.6}
-\contentsline {chapter}{\numberline {7}Conclusion and Project evaluation}{20}{chapter.7}
-\contentsline {chapter}{Appendices}{21}{chapter.7}
-\contentsline {chapter}{\numberline {A}An Appendix About Stuff}{21}{appendix.A}
-\contentsline {chapter}{\numberline {B}Another Appendix About Things}{22}{appendix.B}
-\contentsline {chapter}{\numberline {C}Colophon}{23}{appendix.C}
-\contentsline {chapter}{Bibliography}{24}{appendix.C}
+\contentsline {section}{\numberline {4.3}Design Class Diagram}{18}{section.4.3}
+\contentsline {section}{\numberline {4.4}Database Design}{20}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Introduction}{20}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Conceptual Schema}{20}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Logical Schema}{20}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.4}Physical schema}{21}{subsection.4.4.4}
+\contentsline {section}{\numberline {4.5}Pages Implementation}{21}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}``Register new operation'' Implementation}{22}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}``Search for an operation'' Implementation}{26}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}``Operation Details'' Implementation}{27}{subsection.4.5.3}
+\contentsline {chapter}{\numberline {5}Testing}{30}{chapter.5}
+\contentsline {chapter}{\numberline {6}Conclusion and Project evaluation}{31}{chapter.6}
+\contentsline {chapter}{Appendices}{32}{chapter.6}
+\contentsline {chapter}{\numberline {A}An Appendix About Stuff}{32}{appendix.A}
+\contentsline {chapter}{\numberline {B}Another Appendix About Things}{33}{appendix.B}
+\contentsline {chapter}{\numberline {C}Colophon}{34}{appendix.C}
+\contentsline {chapter}{Bibliography}{35}{appendix.C}

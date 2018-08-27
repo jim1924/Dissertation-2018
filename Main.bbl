@@ -1,16 +1,9 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{example-citation}
 Anne Author.
 \newblock {Example Journal Paper Title}.
 \newblock {\em Journal of Classic Examples}, 1(1):e1001745+, January 1970.
-
-\bibitem{wiskott1997face}
-Laurenz Wiskott, Jean-Marc Fellous, Norbert Kr¨¹ger, and Christoph von~der
-  Malsburg.
-\newblock Face recognition by elastic bunch graph matching.
-\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
-  19:775--779, 1997.
 
 \bibitem{Software_Requirements}
 Karl Wiegers and Joy Beatty.
@@ -49,6 +42,14 @@ Stephen~Halter Tom~Dykstra, Steve~Smith and Chris Ross.
   March 2018.
 \newblock Accessed: [12 July 2018].
 
+\bibitem{separationOfConcerns}
+Edsger W.Dijkstra.
+\newblock On the role of scientific thought.
+\newblock Available at:
+  \url{https://www.cs.utexas.edu/users/EWD/transcriptions/EWD04xx/EWD447.html},
+  August 1974.
+\newblock Accessed: [15 July 2018].
+
 \bibitem{mvc}
 Steve Smith.
 \newblock What is the mvc pattern?
@@ -56,5 +57,40 @@ Steve Smith.
   \url{https://docs.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-2.1\#routing},
   August 2018.
 \newblock Accessed: [15 August 2018].
+
+\bibitem{mvcBook}
+K.~Scott~Allen J.~Galloway, B.~Wilson and D.~Matson.
+\newblock {\em {Professional ASP.NET MVC 5)}}.
+\newblock {Wrox}, 2014.
+
+\bibitem{entity_relationship_approach}
+Peter~P. Chen.
+\newblock {\em {Entity Relationship Approach to Information Modeling and
+  Analysis)}}.
+\newblock {ER institute (1981)}, 1981.
+
+\bibitem{object_oriented_modeling_and_design}
+James R.~Rumbaugh Michael R.~Blaha.
+\newblock {\em {Object-Oriented Modeling and Design with UML: International
+  Edition, 2/E)}}.
+\newblock {Pearson}, 2005.
+
+\bibitem{mysql}
+Hugh~Darwen C.J.~Date.
+\newblock {\em {A Guide to SQL Standard (4th Edition))}}.
+\newblock {Addison-Wesley Professional}, November 1996.
+
+\bibitem{Database_Systems}
+Carolyn~Begg Thomas~Conolly.
+\newblock {\em {Database Systems, Sixth Edition)}}.
+\newblock {Pearson}, 2005.
+
+\bibitem{modelBinding}
+Rachel Appel.
+\newblock Model binding in asp.net core.
+\newblock Available at:
+  \url{https://docs.microsoft.com/en-us/aspnet/core/mvc/models/model-binding?view=aspnetcore-2.1},
+  August 2018.
+\newblock Accessed: [20 August 2018].
 
 \end{thebibliography}

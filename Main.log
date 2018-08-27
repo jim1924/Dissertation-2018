@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.13)  25 AUG 2018 20:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.13)  27 AUG 2018 21:33
 entering extended mode
 **./Main.tex
 (Main.tex
@@ -279,6 +279,20 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \@lastruleclass=\count127
 \@thisrulewidth=\dimen126
 )
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\pdflscape.sty"
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\blindtext\blindtext.sty"
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
 
@@ -508,7 +522,7 @@ Package ifluatex Info: LuaTeX not detected.
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
@@ -536,9 +550,6 @@ Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
 Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
-)
-("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
-Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
@@ -604,8 +615,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip59
 ))
 (FloatSettings.tex) (Main.aux (Preamble.aux) (Chapter1.aux) (Chapter2.aux)
-(Chapter3.aux) (Chapter4.aux) (Chapter5.aux) (Chapter6.aux) (Chapter7.aux)
-(Appendices.aux))
+(Chapter3.aux) (Chapter4.aux) (Chapter5.aux) (Chapter6.aux) (Appendices.aux))
 \openout1 = `Main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
@@ -622,7 +632,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
 LaTeX Font Info:    ... okay on input line 93.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 93.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 93.
@@ -712,7 +723,7 @@ line 93.
 \openout2 = `Preamble.aux'.
 
  (Preamble.tex
-<imgs/ucl_logo.png, id=97, 636.87938pt x 301.125pt>
+<imgs/ucl_logo.png, id=125, 636.87938pt x 301.125pt>
 File: imgs/ucl_logo.png Graphic file (type png)
 <use imgs/ucl_logo.png>
 Package pdftex.def Info: imgs/ucl_logo.png  used on input line 4.
@@ -794,13 +805,13 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
  (Chapter1.tex
 Chapter 1.
 
-Underfull \vbox (badness 1365) has occurred while \output is active []
+Underfull \vbox (badness 2359) has occurred while \output is active []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.16 
+l.15 
       [1
 
 
@@ -870,7 +881,7 @@ been already used, duplicate ignored
                    \relax 
 l.107 
        [7]
-<imgs/Domain_Model.png, id=224, 585.83868pt x 324.31163pt>
+<imgs/Domain_Model.png, id=275, 585.83868pt x 324.31163pt>
 File: imgs/Domain_Model.png Graphic file (type png)
 <use imgs/Domain_Model.png>
 Package pdftex.def Info: imgs/Domain_Model.png  used on input line 113.
@@ -897,7 +908,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imgs/Use_Case_Diagram.png, id=238, 352.31625pt x 280.04625pt>
+<imgs/Use_Case_Diagram.png, id=289, 352.31625pt x 280.04625pt>
 File: imgs/Use_Case_Diagram.png Graphic file (type png)
 <use imgs/Use_Case_Diagram.png>
 Package pdftex.def Info: imgs/Use_Case_Diagram.png  used on input line 215.
@@ -911,7 +922,7 @@ Package nag Warning: `center' environment in figure.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [10]
-<imgs/Add_New_Operation.png, id=249, 627.84563pt x 542.025pt>
+<imgs/Add_New_Operation.png, id=300, 627.84563pt x 542.025pt>
 File: imgs/Add_New_Operation.png Graphic file (type png)
 <use imgs/Add_New_Operation.png>
 Package pdftex.def Info: imgs/Add_New_Operation.png  used on input line 235.
@@ -924,7 +935,7 @@ Package nag Warning: `center' environment in figure.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imgs/Search_For_Operation.png, id=251, 634.62094pt x 477.28313pt>
+<imgs/Search_For_Operation.png, id=302, 634.62094pt x 477.28313pt>
 File: imgs/Search_For_Operation.png Graphic file (type png)
 <use imgs/Search_For_Operation.png>
 Package pdftex.def Info: imgs/Search_For_Operation.png  used on input line 242.
@@ -937,7 +948,7 @@ Package nag Warning: `center' environment in figure.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imgs/Operation_Details.png, id=252, 627.09282pt x 542.025pt>
+<imgs/Operation_Details.png, id=303, 627.09282pt x 542.025pt>
 File: imgs/Operation_Details.png Graphic file (type png)
 <use imgs/Operation_Details.png>
 Package pdftex.def Info: imgs/Operation_Details.png  used on input line 249.
@@ -956,7 +967,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 (Chapter4.tex
 Chapter 4.
-<imgs/asp_structure.jpg, id=276, 334.24875pt x 78.2925pt>
+<imgs/asp_structure.jpg, id=327, 334.24875pt x 78.2925pt>
 File: imgs/asp_structure.jpg Graphic file (type jpg)
 <use imgs/asp_structure.jpg>
 Package pdftex.def Info: imgs/asp_structure.jpg  used on input line 18.
@@ -970,7 +981,7 @@ Package nag Warning: `center' environment in figure.
 
 
  <./imgs/asp_structure.jpg>]
-<imgs/Application_Structure.png, id=283, 963.6pt x 542.025pt>
+<imgs/Application_Structure.png, id=334, 963.6pt x 542.025pt>
 File: imgs/Application_Structure.png Graphic file (type png)
 <use imgs/Application_Structure.png>
 Package pdftex.def Info: imgs/Application_Structure.png  used on input line 38.
@@ -982,22 +993,146 @@ Package nag Warning: `center' environment in figure.
 (nag)                Maybe you want \centering instead on input line 39.
 
 [16 <./imgs/Application_Structure.png>]
-<imgs/mvc.png, id=293, 385.44pt x 245.718pt>
+<imgs/mvc.png, id=345, 385.44pt x 245.718pt>
 File: imgs/mvc.png Graphic file (type png)
 <use imgs/mvc.png>
-Package pdftex.def Info: imgs/mvc.png  used on input line 59.
+Package pdftex.def Info: imgs/mvc.png  used on input line 58.
 (pdftex.def)             Requested size: 483.69684pt x 308.35777pt.
 
 
 Package nag Warning: `center' environment in figure.
-(nag)                Maybe you want \centering instead on input line 60.
+(nag)                Maybe you want \centering instead on input line 59.
 
-) [17 <./imgs/mvc.png>]
+[17 <./imgs/mvc.png>] [18]
+<imgs/Design_Diagram.png, id=372, 1111.2717pt x 840.2592pt>
+File: imgs/Design_Diagram.png Graphic file (type png)
+<use imgs/Design_Diagram.png>
+Package pdftex.def Info: imgs/Design_Diagram.png  used on input line 88.
+(pdftex.def)             Requested size: 682.86613pt x 516.33966pt.
+
+
+Package nag Warning: `center' environment in figure.
+(nag)                Maybe you want \centering instead on input line 89.
+
+
+LaTeX Warning: Float too large for page by 57.70691pt on input line 91.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[19 <./imgs/Design_Diagram.png>]
+<imgs/conceptual_schema.png, id=380, 650.88168pt x 442.65375pt>
+File: imgs/conceptual_schema.png Graphic file (type png)
+<use imgs/conceptual_schema.png>
+Package pdftex.def Info: imgs/conceptual_schema.png  used on input line 113.
+(pdftex.def)             Requested size: 483.69684pt x 328.95003pt.
+
+
+Package nag Warning: `center' environment in figure.
+(nag)                Maybe you want \centering instead on input line 114.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<imgs/er_diagram.png, id=383, 497.30794pt x 436.78181pt>
+File: imgs/er_diagram.png Graphic file (type png)
+<use imgs/er_diagram.png>
+Package pdftex.def Info: imgs/er_diagram.png  used on input line 130.
+(pdftex.def)             Requested size: 483.69684pt x 424.84418pt.
+
+Package nag Warning: `center' environment in figure.
+(nag)                Maybe you want \centering instead on input line 131.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 1975) has occurred while \output is active []
+
+ [20
+
+
+
+]
+<imgs/physical_schema.png, id=391, 614.295pt x 794.97pt>
+File: imgs/physical_schema.png Graphic file (type png)
+<use imgs/physical_schema.png>
+Package pdftex.def Info: imgs/physical_schema.png  used on input line 142.
+(pdftex.def)             Requested size: 483.69684pt x 625.9694pt.
+
+
+Package nag Warning: `center' environment in figure.
+(nag)                Maybe you want \centering instead on input line 143.
+
+[21 <./imgs/conceptual_schema.png>]
+Underfull \vbox (badness 1275) has occurred while \output is active []
+
+ [22 <./imgs/er_diagram.png>]
+
+LaTeX Warning: Text page 23 contains only floats.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23 <./imgs/physical_schema.png>]
+<imgs/new_operation_get.jpg, id=409, 661.2705pt x 137.313pt>
+File: imgs/new_operation_get.jpg Graphic file (type jpg)
+<use imgs/new_operation_get.jpg>
+Package pdftex.def Info: imgs/new_operation_get.jpg  used on input line 163.
+(pdftex.def)             Requested size: 483.69684pt x 100.44087pt.
+
+
+Package nag Warning: `center' environment in figure.
+(nag)                Maybe you want \centering instead on input line 164.
+
+<imgs/new_operation_page.jpg, id=413, 914.81775pt x 477.58424pt>
+File: imgs/new_operation_page.jpg Graphic file (type jpg)
+<use imgs/new_operation_page.jpg>
+Package pdftex.def Info: imgs/new_operation_page.jpg  used on input line 175.
+(pdftex.def)             Requested size: 483.69684pt x 252.51358pt.
+
+Package nag Warning: `center' environment in figure.
+(nag)                Maybe you want \centering instead on input line 176.
+
+<imgs/ajax.jpg, id=414, 296.90926pt x 158.39175pt>
+File: imgs/ajax.jpg Graphic file (type jpg)
+<use imgs/ajax.jpg>
+Package pdftex.def Info: imgs/ajax.jpg  used on input line 182.
+(pdftex.def)             Requested size: 483.69684pt x 258.0385pt.
+
+Package nag Warning: `center' environment in figure.
+(nag)                Maybe you want \centering instead on input line 183.
+
+[24 <./imgs/new_operation_get.jpg>]
+Underfull \vbox (badness 2134) has occurred while \output is active []
+
+ [25 <./imgs/new_operation_page.jpg> <./imgs/ajax.jpg>]
+<imgs/video_extracting.jpg, id=425, 334.851pt x 286.06876pt>
+File: imgs/video_extracting.jpg Graphic file (type jpg)
+<use imgs/video_extracting.jpg>
+Package pdftex.def Info: imgs/video_extracting.jpg  used on input line 196.
+(pdftex.def)             Requested size: 483.69684pt x 413.2351pt.
+
+
+Package nag Warning: `center' environment in figure.
+(nag)                Maybe you want \centering instead on input line 197.
+
+<imgs/audio_extracting.jpg, id=426, 387.24675pt x 269.20575pt>
+File: imgs/audio_extracting.jpg Graphic file (type jpg)
+<use imgs/audio_extracting.jpg>
+Package pdftex.def Info: imgs/audio_extracting.jpg  used on input line 203.
+(pdftex.def)             Requested size: 483.69684pt x 336.2763pt.
+
+Package nag Warning: `center' environment in figure.
+(nag)                Maybe you want \centering instead on input line 204.
+
+[26] [27 <./imgs/video_extracting.jpg>] [28 <./imgs/audio_extracting.jpg>])
+[29]
 \openout2 = `Chapter5.aux'.
 
  (Chapter5.tex
 Chapter 5.
-) [18
+) [30
 
 
 
@@ -1006,16 +1141,7 @@ Chapter 5.
 
  (Chapter6.tex
 Chapter 6.
-) [19
-
-
-
-]
-\openout2 = `Chapter7.aux'.
-
- (Chapter7.tex
-Chapter 7.
-) [20
+) [31
 
 
 
@@ -1024,54 +1150,76 @@ Chapter 7.
 
  (Appendices.tex
 Appendix A.
-[21
+[32
 
 
 
 ]
 Appendix B.
-[22
+[33
 
 ]
 Appendix C.
-) [23
+) [34
 
 ] (Main.bbl
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 28.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 21.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-))
+)
+[35
+
+
+])
 
 Package nag Warning: Package times is obsolete.
 (nag)                Use the mathptmx, helvet (option scaled=.9), courier packa
 ges instead.
 
 
-Package nag Warning: 9 complaints in total.
+Package nag Warning: 18 complaints in total.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 140.
-[24
-
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 140.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 139.
+[36]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 139.
  (Main.aux (Preamble.aux) (Chapter1.aux) (Chapter2.aux) (Chapter3.aux)
-(Chapter4.aux) (Chapter5.aux) (Chapter6.aux) (Chapter7.aux) (Appendices.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 140.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 140.
+(Chapter4.aux) (Chapter5.aux) (Chapter6.aux) (Appendices.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 139.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 139.
 Package rerunfilecheck Info: File `Main.out' has not changed.
-(rerunfilecheck)             Checksum: F55F67098420E0EA68980C48D1EC9E17;1506.
+(rerunfilecheck)             Checksum: BFCB6B483B7E692775AA4641A582E1D6;2096.
  ) 
 Here is how much of TeX's memory you used:
- 10883 strings out of 493305
- 162948 string characters out of 3138845
- 296782 words of memory out of 3000000
- 14043 multiletter control sequences out of 15000+200000
+ 11026 strings out of 493305
+ 165565 string characters out of 3138845
+ 297658 words of memory out of 3000000
+ 14132 multiletter control sequences out of 15000+200000
  58953 words of font info for 85 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,18n,92p,1110b,520s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{cite.mvc} has been referenced but does not exist,
+pdfTeX warning (dest): name{cite.modelBinding} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.Database_Systems} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.mysql} has been referenced but does not exist,
  replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.object_oriented_modeling_and_design} has been 
+referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.entity_relationship_approach} has been referen
+ced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.mvcBook} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.mvc} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{cite.separationOfConcerns} has been referenced but 
+does not exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{cite.aspNetStructure} has been referenced but does 
 not exist, replaced by a fixed one
@@ -1091,16 +1239,13 @@ not exist, replaced by a fixed one
 pdfTeX warning (dest): name{cite.Software_Requirements} has been referenced but
  does not exist, replaced by a fixed one
 
-pdfTeX warning (dest): name{cite.wiskott1997face} has been referenced but does 
-not exist, replaced by a fixed one
-
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKT
 eX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
 pe1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utm
 r8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Main.pdf (31 pages, 1331883 bytes).
+Output written on Main.pdf (43 pages, 2268115 bytes).
 PDF statistics:
- 384 PDF objects out of 1000 (max. 8388607)
- 89 named destinations out of 1000 (max. 500000)
- 238 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 547 PDF objects out of 1000 (max. 8388607)
+ 132 named destinations out of 1000 (max. 500000)
+ 339 words of extra memory for PDF output out of 10000 (max. 10000000)
 

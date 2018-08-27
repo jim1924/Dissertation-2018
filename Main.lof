@@ -10,7 +10,15 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces ASP.NET Structure}}{15}{figure.caption.15}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Application General Structure}}{16}{figure.caption.16}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces The Model-View-Controller Pattern of ASP.NET Core}}{17}{figure.caption.17}
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Design Class Diagram}}{19}{figure.caption.18}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Conceptual schema}}{21}{figure.caption.19}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Entity-Relationship Diagram}}{22}{figure.caption.20}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Physical database schema}}{23}{figure.caption.21}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces NewOperation (HttpGet Request)}}{24}{figure.caption.22}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces NewOperation Page}}{25}{figure.caption.23}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces AJAX Call}}{25}{figure.caption.24}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Extracting meta-data from video files}}{27}{figure.caption.25}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Extracting meta-data from audio files}}{28}{figure.caption.26}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

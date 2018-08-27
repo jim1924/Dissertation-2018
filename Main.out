@@ -9,16 +9,23 @@
 \BOOKMARK [1][-]{section.3.4}{Use Case Analysis}{chapter.3}% 9
 \BOOKMARK [1][-]{section.3.5}{Use Case Diagram}{chapter.3}% 10
 \BOOKMARK [1][-]{section.3.6}{Mock-ups}{chapter.3}% 11
-\BOOKMARK [0][-]{chapter.4}{Design}{}% 12
+\BOOKMARK [0][-]{chapter.4}{Design and Implementation}{}% 12
 \BOOKMARK [1][-]{section.4.1}{Architecture and System Structure}{chapter.4}% 13
 \BOOKMARK [1][-]{section.4.2}{Model-View-Controller Pattern}{chapter.4}% 14
 \BOOKMARK [1][-]{section.4.3}{Design Class Diagram}{chapter.4}% 15
-\BOOKMARK [1][-]{section.4.4}{Database Design and ERD}{chapter.4}% 16
-\BOOKMARK [0][-]{chapter.5}{Implementation}{}% 17
-\BOOKMARK [0][-]{chapter.6}{Testing}{}% 18
-\BOOKMARK [0][-]{chapter.7}{Conclusion and Project evaluation}{}% 19
-\BOOKMARK [0][-]{chapter.7}{Appendices}{}% 20
-\BOOKMARK [0][-]{appendix.A}{An Appendix About Stuff}{}% 21
-\BOOKMARK [0][-]{appendix.B}{Another Appendix About Things}{}% 22
-\BOOKMARK [0][-]{appendix.C}{Colophon}{}% 23
-\BOOKMARK [0][-]{appendix.C}{Bibliography}{}% 24
+\BOOKMARK [1][-]{section.4.4}{Database Design}{chapter.4}% 16
+\BOOKMARK [2][-]{subsection.4.4.1}{Introduction}{section.4.4}% 17
+\BOOKMARK [2][-]{subsection.4.4.2}{Conceptual Schema}{section.4.4}% 18
+\BOOKMARK [2][-]{subsection.4.4.3}{Logical Schema}{section.4.4}% 19
+\BOOKMARK [2][-]{subsection.4.4.4}{Physical schema}{section.4.4}% 20
+\BOOKMARK [1][-]{section.4.5}{Pages Implementation}{chapter.4}% 21
+\BOOKMARK [2][-]{subsection.4.5.1}{``Register new operation'' Implementation}{section.4.5}% 22
+\BOOKMARK [2][-]{subsection.4.5.2}{``Search for an operation'' Implementation}{section.4.5}% 23
+\BOOKMARK [2][-]{subsection.4.5.3}{``Operation Details'' Implementation}{section.4.5}% 24
+\BOOKMARK [0][-]{chapter.5}{Testing}{}% 25
+\BOOKMARK [0][-]{chapter.6}{Conclusion and Project evaluation}{}% 26
+\BOOKMARK [0][-]{chapter.6}{Appendices}{}% 27
+\BOOKMARK [0][-]{appendix.A}{An Appendix About Stuff}{}% 28
+\BOOKMARK [0][-]{appendix.B}{Another Appendix About Things}{}% 29
+\BOOKMARK [0][-]{appendix.C}{Colophon}{}% 30
+\BOOKMARK [0][-]{appendix.C}{Bibliography}{}% 31
