@@ -154,8 +154,8 @@ The application has a single Controller, which as mentioned in \ref{sub:MVC}, is
 \subsection{``Register new operation'' Implementation}
 \label{sub:register_new_operation_implementation}
 
-In this subsection, the process of registering a new operation to the system is explained. The HomeController of the application has two methods with exactly the same names (``New Operation'') that correspond to the HttpGet and HttpPost request from the client side. When the user selects to load the ``Add new Operation'' View, the HttpGet method is called from the Controller. Due to the fact that this page doesn't require a already defined model of the application, a new ViewModel had to be created (``NewOperationViewModel''). 
-At this stage, the controller instantiates the ViewModel, queries the database to load it and then passes it to the rendered View for display. The HttpGet method of the HomeController is shown in figure \ref{new_operation_get}.
+In this subsection, the process of registering a new operation to the system is explained. The HomeController of the application has two methods with exactly the same names (``New Operation'') that correspond to the HttpGet and HttpPost request from the client side. When the user selects to load the ``Add new Operation'' View, the HttpGet method is called from the Controller. Due to the fact that this page doesn't require a already defined model of the application, a new view model had to be created (``NewOperationViewModel''). 
+At this stage, the controller instantiates the view model, queries the database to load it and then passes it to the rendered View for display. The HttpGet method of the HomeController is shown in figure \ref{new_operation_get}.
 
 
 \begin{figure}[!ht]
@@ -174,7 +174,7 @@ Before the web application posts back to the server, JavaScript validation has t
 \begin{center}
 \includegraphics[width=17cm]{imgs/new_operation_page.jpg}
 \end{center}\vspace{-0.3cm}
-\caption[NewOperation Page]{NewOperation Page} \label{new_operation_page}
+\caption[Register a new operation Page]{Register a new operation Page} \label{new_operation_page}
 \end{figure}
 
 \begin{figure}[!ht]
@@ -184,11 +184,12 @@ Before the web application posts back to the server, JavaScript validation has t
 \caption[AJAX Call]{AJAX Call} \label{ajax}
 \end{figure}
 
-When the user has entered all the required fields and selected at least one input file for uploading, a HttpPost request is submitted to the server. As previously mentioned, model binding in ASP.NET Core easily binds the data coming from the View to the model, which is then passed back to the controller for manipulation. When the user submits the form, another method with the same name is called (``NewOperation'') which is responsible for the HttpPost requests and takes as input the ViewModel (NewOperationFormViewModel).
+When the user has entered all the required fields and selected at least one input file for uploading, a HttpPost request is submitted to the server. As previously mentioned, model binding in ASP.NET Core easily binds the data coming from the View to the model, which is then passed back to the controller for manipulation. When the user submits the form, another method with the same name is called (``NewOperation'') which is responsible for the HttpPost requests and takes as input the view model (NewOperationFormViewModel).
+
 After the server-side validation of the model has been successful, the controller must process and manipulate the incoming data, store the input files in the Azure blob storage and insert the new operation to the MySQL relational database. For the purpose of communicating with the database, an additional class has been created (DBContext). The controller, takes as input the model originated from the View, manipulates the incoming data, and passes the same model to the ``DBContext'' class for updating the database. This is a very important issue, as the application had to follow the principle of separation of concerns.
 It is very critical here to mention that only the metadata extracted from the input files were stored to the MySQL database. The files themselves were only stored to a connected file storage account (Microsoft Azure Blob Storage). For this purpose, a new controller had to be created in order to store and retrieve the files from the file storage (BlobsController).
 
-In regards to the extraction of the meta-data from the input files, additional NuGet packages and libraries (MediaInfo) had to be installed to the project. Furthermore, a dedicated class for processing, manipulating and extracting metadata from the files had to be created (``MediaUtilities''). This class enables the application to extract information from the input files that would have otherwise been almost impossible to gain. A very small sample of the obtained metadata include the exact starting date, the size of the files, codec used, encoded date, aspect ratio, frame-rate, duration of the media files and many more. The part where the application extracts the metadata from the media files is shown in figures \
+In regards to the extraction of the meta-data from the input files, additional NuGet packages and libraries (MediaInfo) had to be installed to the project. Furthermore, a dedicated class for processing, manipulating and extracting metadata from the files had to be created (``MediaUtilities''). This class enables the application to extract information from the input files that would have otherwise been almost impossible to gain. A very small sample of the obtained metadata include the exact starting date, the size of the files, codec used, encoded date, aspect ratio, frame-rate, duration of the media files and many more. The part where the application extracts the metadata from the media files is shown in figures \ref{video_extracting} and \ref{audio_extracting}.
 
 
 \begin{figure}[!ht]
@@ -211,18 +212,30 @@ In regards to the extraction of the meta-data from the input files, additional N
 \subsection{``Search for an operation'' Implementation}
 \label{sub:search_for_an_operation_implementation}
 
-Following the regisration of a new operation, the user can navigate to the home page, where they can search for an operation stored in the relational database. As mentioned in subsection \ref{sub:register_new_operation_implementation}, two methods with the same name were created in the HomeController, one for the HttpGet and one for the HttpPost request.
+Following the regisration of a new operation, the user can navigate to the home page, where they can search for an operation stored in the relational database. As mentioned in subsection \ref{sub:register_new_operation_implementation}, two methods with the same name were created in the HomeController, one for the HttpGet and one for the HttpPost request. Since no model is sufficient to display the information needed in this page, two more view models had to be created (SearchOperationViewModel \& SingleOperationViewModel) which are shown in figure \ref{two_view_models}. The rationale for this implementation decision is that the view had to display two completely different elements; all the filters and a number of operation as a list. Therefore the controller had to pass to the view a single view model that would incorporate two view models as objects. For displaying the filters section, there was no need to create a new view model and thus the pre-existing NewOperationFormViewModel was used. 
 
+As implemented in the ``add new operation'' page, AJAX had to be used for querying the database without posting back to the server. This page, which is also the home page, initially shows the 20 most recently uploaded operations. The user can apply certain filters, such as date,hospital, operating room number, patient, staff, etc. in order to reduce the results and find the specific operation of their choice. As a consistent implementation pattern, when the user clicks the search button, a HttpPost request is submitted to the same method. Then, the ``NewOperationFormViewModel'' is examined and processed, in order to ascertain whether the user has filled any of the filter fields. If that is the case, the view model is used to pass it to the database controller (DBContext) and return the results from the database, according to the filters of the user. Finally, the HttpPost method load the same view model (SearchOperationViewModel) which is in turn passed to the view for displaying. The search page of the application is shown in figure \ref{search_operation_page}.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=17cm]{imgs/two_view_models.jpg}
+\end{center}\vspace{-0.3cm}
+\caption[SearchOperationViewModel \& SingleOperationViewModel]{SearchOperationViewModel \& SingleOperationViewModel} \label{two_view_models}
+\end{figure}
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=17cm]{imgs/search_operation_page.jpg}
+\end{center}\vspace{-0.3cm}
+\caption[Search for an operation Page]{Search for an operation Page} \label{search_operation_page}
+\end{figure}
 
 \subsection{``Operation Details'' Implementation}
 \label{sub:operation_details_implentation}
 
+The last part of the application's user interface is about displaying all the relevant information of an operation.From the home page, the user clicks on any listed operation and the details page will be loaded. It is important here to highlight that another controller method was deemed appropriate to be called, using the ASP.NET Core routing. Routing in ASP.NET Core MVC is the mechanism through which incoming requests are mapped to controllers and their actions. This is achieved by adding Routing middleware to the pipeline and using IRouteBuilder to map URL pattern to a controller and action \cite{routing}.
 
+Therefore, using the routing functionality of ASP.NET Core, the Details methods is called from the HomeController, which takes as input the specific operation id that the user has selected. The method then passes the id to the database controller (DBContext) which queries the database and returns all the stored informations related to the specific operation. As in all previous methods, a view model is loaded (in this case the ``SingleOperationViewModel'') and then passed to the view for displaying.
 
-\blindtext
-
-\blindtext
-
-\blindtext
 
 

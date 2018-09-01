@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.13)  27 AUG 2018 21:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.13)  1 SEP 2018 19:11
 entering extended mode
 **./Main.tex
 (Main.tex
@@ -723,7 +723,7 @@ line 93.
 \openout2 = `Preamble.aux'.
 
  (Preamble.tex
-<imgs/ucl_logo.png, id=125, 636.87938pt x 301.125pt>
+<imgs/ucl_logo.png, id=153, 636.87938pt x 301.125pt>
 File: imgs/ucl_logo.png Graphic file (type png)
 <use imgs/ucl_logo.png>
 Package pdftex.def Info: imgs/ucl_logo.png  used on input line 4.
@@ -742,41 +742,41 @@ imgs/ucl_logo.png>] [2
 [3
 
 ] (Main.toc
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 4.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 3.
 
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ztmcm.fd"
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 4.
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 3.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omlztmcm.fd"
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 4.
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 3.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsztmcm.fd"
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 4.
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 3.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omxztmcm.fd"
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 4.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 3.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 4.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 3.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ts1ptm.fd"
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
@@ -826,62 +826,54 @@ l.118 \include{Chapter1}
 
  (Chapter2.tex
 Chapter 2.
-
-Underfull \vbox (badness 4608) has occurred while \output is active []
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.11 
-      [3
-
-
-
-])pdfTeX warning (ext4): destination with the same identifier (name{page.4}) ha
-s been already used, duplicate ignored
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 4.
+)pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has
+ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.119 \include{Chapter2}
-                         [4]
+                         [3
+
+
+
+]
 \openout2 = `Chapter3.aux'.
 
  (Chapter3.tex
 Chapter 3.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 10.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 28.
 \c@magicrownumbers=\count178
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 39.
-pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
+pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.61 ... using relevant criteria  &Must  \\ \hline
-                                                   [5
+                                                   [4
 
 
 
 ]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 72.
-pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has 
+pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.74 \end{longtable}
-                     [6]
+                     [5]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has 
+pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.107 
-       [7]
-<imgs/Domain_Model.png, id=275, 585.83868pt x 324.31163pt>
+       [6]
+<imgs/Domain_Model.png, id=314, 585.83868pt x 324.31163pt>
 File: imgs/Domain_Model.png Graphic file (type png)
 <use imgs/Domain_Model.png>
 Package pdftex.def Info: imgs/Domain_Model.png  used on input line 113.
@@ -894,7 +886,12 @@ Package nag Warning: `center' environment in figure.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8 <./imgs/Domain_Model.png>]
+pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.124 
+       [7 <./imgs/Domain_Model.png>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 146.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
@@ -908,7 +905,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imgs/Use_Case_Diagram.png, id=289, 352.31625pt x 280.04625pt>
+<imgs/Use_Case_Diagram.png, id=327, 352.31625pt x 280.04625pt>
 File: imgs/Use_Case_Diagram.png Graphic file (type png)
 <use imgs/Use_Case_Diagram.png>
 Package pdftex.def Info: imgs/Use_Case_Diagram.png  used on input line 215.
@@ -917,12 +914,12 @@ Package pdftex.def Info: imgs/Use_Case_Diagram.png  used on input line 215.
 Package nag Warning: `center' environment in figure.
 (nag)                Maybe you want \centering instead on input line 216.
 
-[9]
+[8]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[10]
-<imgs/Add_New_Operation.png, id=300, 627.84563pt x 542.025pt>
+[9]
+<imgs/Add_New_Operation.png, id=338, 627.84563pt x 542.025pt>
 File: imgs/Add_New_Operation.png Graphic file (type png)
 <use imgs/Add_New_Operation.png>
 Package pdftex.def Info: imgs/Add_New_Operation.png  used on input line 235.
@@ -935,7 +932,7 @@ Package nag Warning: `center' environment in figure.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imgs/Search_For_Operation.png, id=302, 634.62094pt x 477.28313pt>
+<imgs/Search_For_Operation.png, id=340, 634.62094pt x 477.28313pt>
 File: imgs/Search_For_Operation.png Graphic file (type png)
 <use imgs/Search_For_Operation.png>
 Package pdftex.def Info: imgs/Search_For_Operation.png  used on input line 242.
@@ -948,7 +945,7 @@ Package nag Warning: `center' environment in figure.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imgs/Operation_Details.png, id=303, 627.09282pt x 542.025pt>
+<imgs/Operation_Details.png, id=341, 627.09282pt x 542.025pt>
 File: imgs/Operation_Details.png Graphic file (type png)
 <use imgs/Operation_Details.png>
 Package pdftex.def Info: imgs/Operation_Details.png  used on input line 249.
@@ -960,14 +957,14 @@ Package nag Warning: `center' environment in figure.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [11 <./imgs/Use_Case_Diagram.png>] [12 <./imgs/Add_New_Operation.png>]
-[13 <./imgs/Search_For_Operation.png>] [14 <./imgs/Operation_Details.png>]
+) [10 <./imgs/Use_Case_Diagram.png>] [11 <./imgs/Add_New_Operation.png>]
+[12 <./imgs/Search_For_Operation.png>] [13 <./imgs/Operation_Details.png>]
 \openout2 = `Chapter4.aux'.
 
 
 (Chapter4.tex
 Chapter 4.
-<imgs/asp_structure.jpg, id=327, 334.24875pt x 78.2925pt>
+<imgs/asp_structure.jpg, id=365, 334.24875pt x 78.2925pt>
 File: imgs/asp_structure.jpg Graphic file (type jpg)
 <use imgs/asp_structure.jpg>
 Package pdftex.def Info: imgs/asp_structure.jpg  used on input line 18.
@@ -976,12 +973,12 @@ Package pdftex.def Info: imgs/asp_structure.jpg  used on input line 18.
 Package nag Warning: `center' environment in figure.
 (nag)                Maybe you want \centering instead on input line 19.
 
-[15
+[14
 
 
 
  <./imgs/asp_structure.jpg>]
-<imgs/Application_Structure.png, id=334, 963.6pt x 542.025pt>
+<imgs/Application_Structure.png, id=372, 963.6pt x 542.025pt>
 File: imgs/Application_Structure.png Graphic file (type png)
 <use imgs/Application_Structure.png>
 Package pdftex.def Info: imgs/Application_Structure.png  used on input line 38.
@@ -992,8 +989,8 @@ Package pdftex.def Info: imgs/Application_Structure.png  used on input line 38.
 Package nag Warning: `center' environment in figure.
 (nag)                Maybe you want \centering instead on input line 39.
 
-[16 <./imgs/Application_Structure.png>]
-<imgs/mvc.png, id=345, 385.44pt x 245.718pt>
+[15 <./imgs/Application_Structure.png>]
+<imgs/mvc.png, id=383, 385.44pt x 245.718pt>
 File: imgs/mvc.png Graphic file (type png)
 <use imgs/mvc.png>
 Package pdftex.def Info: imgs/mvc.png  used on input line 58.
@@ -1003,8 +1000,8 @@ Package pdftex.def Info: imgs/mvc.png  used on input line 58.
 Package nag Warning: `center' environment in figure.
 (nag)                Maybe you want \centering instead on input line 59.
 
-[17 <./imgs/mvc.png>] [18]
-<imgs/Design_Diagram.png, id=372, 1111.2717pt x 840.2592pt>
+[16 <./imgs/mvc.png>] [17]
+<imgs/Design_Diagram.png, id=409, 1111.2717pt x 840.2592pt>
 File: imgs/Design_Diagram.png Graphic file (type png)
 <use imgs/Design_Diagram.png>
 Package pdftex.def Info: imgs/Design_Diagram.png  used on input line 88.
@@ -1020,8 +1017,8 @@ LaTeX Warning: Float too large for page by 57.70691pt on input line 91.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[19 <./imgs/Design_Diagram.png>]
-<imgs/conceptual_schema.png, id=380, 650.88168pt x 442.65375pt>
+[18 <./imgs/Design_Diagram.png>]
+<imgs/conceptual_schema.png, id=418, 650.88168pt x 442.65375pt>
 File: imgs/conceptual_schema.png Graphic file (type png)
 <use imgs/conceptual_schema.png>
 Package pdftex.def Info: imgs/conceptual_schema.png  used on input line 113.
@@ -1034,7 +1031,7 @@ Package nag Warning: `center' environment in figure.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imgs/er_diagram.png, id=383, 497.30794pt x 436.78181pt>
+<imgs/er_diagram.png, id=421, 497.30794pt x 436.78181pt>
 File: imgs/er_diagram.png Graphic file (type png)
 <use imgs/er_diagram.png>
 Package pdftex.def Info: imgs/er_diagram.png  used on input line 130.
@@ -1049,12 +1046,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 Underfull \vbox (badness 1975) has occurred while \output is active []
 
- [20
+ [19
 
 
 
 ]
-<imgs/physical_schema.png, id=391, 614.295pt x 794.97pt>
+<imgs/physical_schema.png, id=429, 614.295pt x 794.97pt>
 File: imgs/physical_schema.png Graphic file (type png)
 <use imgs/physical_schema.png>
 Package pdftex.def Info: imgs/physical_schema.png  used on input line 142.
@@ -1064,18 +1061,18 @@ Package pdftex.def Info: imgs/physical_schema.png  used on input line 142.
 Package nag Warning: `center' environment in figure.
 (nag)                Maybe you want \centering instead on input line 143.
 
-[21 <./imgs/conceptual_schema.png>]
+[20 <./imgs/conceptual_schema.png>]
 Underfull \vbox (badness 1275) has occurred while \output is active []
 
- [22 <./imgs/er_diagram.png>]
+ [21 <./imgs/er_diagram.png>]
 
-LaTeX Warning: Text page 23 contains only floats.
+LaTeX Warning: Text page 22 contains only floats.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [23 <./imgs/physical_schema.png>]
-<imgs/new_operation_get.jpg, id=409, 661.2705pt x 137.313pt>
+ [22 <./imgs/physical_schema.png>]
+<imgs/new_operation_get.jpg, id=447, 661.2705pt x 137.313pt>
 File: imgs/new_operation_get.jpg Graphic file (type jpg)
 <use imgs/new_operation_get.jpg>
 Package pdftex.def Info: imgs/new_operation_get.jpg  used on input line 163.
@@ -1085,7 +1082,7 @@ Package pdftex.def Info: imgs/new_operation_get.jpg  used on input line 163.
 Package nag Warning: `center' environment in figure.
 (nag)                Maybe you want \centering instead on input line 164.
 
-<imgs/new_operation_page.jpg, id=413, 914.81775pt x 477.58424pt>
+<imgs/new_operation_page.jpg, id=451, 914.81775pt x 477.58424pt>
 File: imgs/new_operation_page.jpg Graphic file (type jpg)
 <use imgs/new_operation_page.jpg>
 Package pdftex.def Info: imgs/new_operation_page.jpg  used on input line 175.
@@ -1094,7 +1091,7 @@ Package pdftex.def Info: imgs/new_operation_page.jpg  used on input line 175.
 Package nag Warning: `center' environment in figure.
 (nag)                Maybe you want \centering instead on input line 176.
 
-<imgs/ajax.jpg, id=414, 296.90926pt x 158.39175pt>
+<imgs/ajax.jpg, id=452, 296.90926pt x 158.39175pt>
 File: imgs/ajax.jpg Graphic file (type jpg)
 <use imgs/ajax.jpg>
 Package pdftex.def Info: imgs/ajax.jpg  used on input line 182.
@@ -1103,45 +1100,91 @@ Package pdftex.def Info: imgs/ajax.jpg  used on input line 182.
 Package nag Warning: `center' environment in figure.
 (nag)                Maybe you want \centering instead on input line 183.
 
-[24 <./imgs/new_operation_get.jpg>]
-Underfull \vbox (badness 2134) has occurred while \output is active []
+[23 <./imgs/new_operation_get.jpg>]
+Underfull \vbox (badness 1092) has occurred while \output is active []
 
- [25 <./imgs/new_operation_page.jpg> <./imgs/ajax.jpg>]
-<imgs/video_extracting.jpg, id=425, 334.851pt x 286.06876pt>
+ [24 <./imgs/new_operation_page.jpg> <./imgs/ajax.jpg>]
+<imgs/video_extracting.jpg, id=465, 334.851pt x 286.06876pt>
 File: imgs/video_extracting.jpg Graphic file (type jpg)
 <use imgs/video_extracting.jpg>
-Package pdftex.def Info: imgs/video_extracting.jpg  used on input line 196.
+Package pdftex.def Info: imgs/video_extracting.jpg  used on input line 197.
 (pdftex.def)             Requested size: 483.69684pt x 413.2351pt.
 
 
 Package nag Warning: `center' environment in figure.
-(nag)                Maybe you want \centering instead on input line 197.
+(nag)                Maybe you want \centering instead on input line 198.
 
-<imgs/audio_extracting.jpg, id=426, 387.24675pt x 269.20575pt>
+<imgs/audio_extracting.jpg, id=466, 387.24675pt x 269.20575pt>
 File: imgs/audio_extracting.jpg Graphic file (type jpg)
 <use imgs/audio_extracting.jpg>
-Package pdftex.def Info: imgs/audio_extracting.jpg  used on input line 203.
+Package pdftex.def Info: imgs/audio_extracting.jpg  used on input line 204.
 (pdftex.def)             Requested size: 483.69684pt x 336.2763pt.
 
 Package nag Warning: `center' environment in figure.
-(nag)                Maybe you want \centering instead on input line 204.
+(nag)                Maybe you want \centering instead on input line 205.
 
-[26] [27 <./imgs/video_extracting.jpg>] [28 <./imgs/audio_extracting.jpg>])
-[29]
+[25]
+<imgs/two_view_models.jpg, id=474, 290.88675pt x 185.493pt>
+File: imgs/two_view_models.jpg Graphic file (type jpg)
+<use imgs/two_view_models.jpg>
+Package pdftex.def Info: imgs/two_view_models.jpg  used on input line 221.
+(pdftex.def)             Requested size: 483.69684pt x 308.45323pt.
+
+
+Package nag Warning: `center' environment in figure.
+(nag)                Maybe you want \centering instead on input line 222.
+
+<imgs/search_operation_page.jpg, id=475, 898.557pt x 551.05875pt>
+File: imgs/search_operation_page.jpg Graphic file (type jpg)
+<use imgs/search_operation_page.jpg>
+Package pdftex.def Info: imgs/search_operation_page.jpg  used on input line 228
+.
+(pdftex.def)             Requested size: 483.69684pt x 296.64235pt.
+
+Package nag Warning: `center' environment in figure.
+(nag)                Maybe you want \centering instead on input line 229.
+
+[26 <./imgs/video_extracting.jpg>]) [27 <./imgs/audio_extracting.jpg>]
+
+LaTeX Warning: Text page 28 contains only floats.
+
+[28 <./imgs/two_view_models.jpg> <./imgs/search_operation_page.jpg>]
 \openout2 = `Chapter5.aux'.
 
- (Chapter5.tex
+
+(Chapter5.tex
 Chapter 5.
-) [30
+[29
 
 
 
-]
+] [30]
+<imgs/unit_tests.jpg, id=514, 507.69675pt x 628.14674pt>
+File: imgs/unit_tests.jpg Graphic file (type jpg)
+<use imgs/unit_tests.jpg>
+Package pdftex.def Info: imgs/unit_tests.jpg  used on input line 53.
+(pdftex.def)             Requested size: 483.69684pt x 598.46129pt.
+
+
+Package nag Warning: `center' environment in figure.
+(nag)                Maybe you want \centering instead on input line 54.
+
+<imgs/responsiveness_test.jpg, id=516, 623.32875pt x 517.33275pt>
+File: imgs/responsiveness_test.jpg Graphic file (type jpg)
+<use imgs/responsiveness_test.jpg>
+Package pdftex.def Info: imgs/responsiveness_test.jpg  used on input line 70.
+(pdftex.def)             Requested size: 483.69684pt x 401.44972pt.
+
+Package nag Warning: `center' environment in figure.
+(nag)                Maybe you want \centering instead on input line 71.
+
+) [31] [32 <./imgs/unit_tests.jpg>] [33 <./imgs/responsiveness_test.jpg>]
 \openout2 = `Chapter6.aux'.
 
- (Chapter6.tex
+
+(Chapter6.tex
 Chapter 6.
-) [31
+) [34
 
 
 
@@ -1150,24 +1193,20 @@ Chapter 6.
 
  (Appendices.tex
 Appendix A.
-[32
+[35
 
 
 
 ]
 Appendix B.
-[33
-
-]
-Appendix C.
-) [34
+) [36
 
 ] (Main.bbl
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 21.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-[35
+[37
 
 
 ])
@@ -1176,29 +1215,48 @@ Package nag Warning: Package times is obsolete.
 (nag)                Use the mathptmx, helvet (option scaled=.9), courier packa
 ges instead.
 
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 139.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 139.
 
-Package nag Warning: 18 complaints in total.
+Package nag Warning: 22 complaints in total.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 139.
-[36]
+[38]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 139.
  (Main.aux (Preamble.aux) (Chapter1.aux) (Chapter2.aux) (Chapter3.aux)
 (Chapter4.aux) (Chapter5.aux) (Chapter6.aux) (Appendices.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 139.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 139.
 Package rerunfilecheck Info: File `Main.out' has not changed.
-(rerunfilecheck)             Checksum: BFCB6B483B7E692775AA4641A582E1D6;2096.
+(rerunfilecheck)             Checksum: 2119C4515EF3EA045DBE547F2B878818;2690.
  ) 
 Here is how much of TeX's memory you used:
- 11026 strings out of 493305
- 165565 string characters out of 3138845
- 297658 words of memory out of 3000000
- 14132 multiletter control sequences out of 15000+200000
- 58953 words of font info for 85 fonts, out of 3000000 for 9000
+ 11118 strings out of 493305
+ 167072 string characters out of 3138845
+ 298478 words of memory out of 3000000
+ 14191 multiletter control sequences out of 15000+200000
+ 65001 words of font info for 99 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,18n,92p,1110b,520s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{cite.modelBinding} has been referenced but does n
-ot exist, replaced by a fixed one
+ 55i,18n,92p,1133b,520s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{cite.clean_coder} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.tdd2} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.tdd1} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.unit} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.routing} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.modelBinding} has been referenced but does not
+ exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{cite.Database_Systems} has been referenced but does
  not exist, replaced by a fixed one
@@ -1243,9 +1301,9 @@ pdfTeX warning (dest): name{cite.Software_Requirements} has been referenced but
 eX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
 pe1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utm
 r8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Main.pdf (43 pages, 2268115 bytes).
+Output written on Main.pdf (45 pages, 2644606 bytes).
 PDF statistics:
- 547 PDF objects out of 1000 (max. 8388607)
- 132 named destinations out of 1000 (max. 500000)
- 339 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 636 PDF objects out of 1000 (max. 8388607)
+ 161 named destinations out of 1000 (max. 500000)
+ 415 words of extra memory for PDF output out of 10000 (max. 10000000)
 

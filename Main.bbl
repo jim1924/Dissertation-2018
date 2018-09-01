@@ -93,4 +93,33 @@ Rachel Appel.
   August 2018.
 \newblock Accessed: [20 August 2018].
 
+\bibitem{routing}
+Ryan Nowak and Rick Anderson.
+\newblock Routing to controller actions in asp.net core.
+\newblock Available at:
+  \url{https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-2.1},
+  March 2017.
+\newblock Accessed: [15 July 2018].
+
+\bibitem{unit}
+Roger~S Pressman.
+\newblock {\em Software engineering: a practitioner's approach}.
+\newblock McGraw-Hill Higher Education, April 2009.
+
+\bibitem{tdd1}
+Kent Beck.
+\newblock {\em Test Driven Development: By Example}.
+\newblock Addison-Wesley Professional, November 2002.
+
+\bibitem{tdd2}
+David Astels.
+\newblock {\em Test-Driven Development: A Practical Guide: A Practical Guide}.
+\newblock Prentice Hall, July 2003.
+
+\bibitem{clean_coder}
+Robert Martin.
+\newblock {\em {The Clean Coder: A Code of Conduct for Professional Programmers
+  (Robert C. Martin)}}.
+\newblock May 2011.
+
 \end{thebibliography}

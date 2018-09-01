@@ -1,26 +1,29 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Domain Model}}{8}{figure.caption.6}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Use Case Diagram}}{11}{figure.caption.11}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces ``Add new Operation'' View}}{12}{figure.caption.12}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces ``Search for an Operation'' View}}{13}{figure.caption.13}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces ``Operation Details'' View}}{14}{figure.caption.14}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Domain Model}}{7}{figure.caption.6}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Use Case Diagram}}{10}{figure.caption.11}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces ``Add new Operation'' View}}{11}{figure.caption.12}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces ``Search for an Operation'' View}}{12}{figure.caption.13}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces ``Operation Details'' View}}{13}{figure.caption.14}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces ASP.NET Structure}}{15}{figure.caption.15}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Application General Structure}}{16}{figure.caption.16}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces The Model-View-Controller Pattern of ASP.NET Core}}{17}{figure.caption.17}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Design Class Diagram}}{19}{figure.caption.18}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Conceptual schema}}{21}{figure.caption.19}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Entity-Relationship Diagram}}{22}{figure.caption.20}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Physical database schema}}{23}{figure.caption.21}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces NewOperation (HttpGet Request)}}{24}{figure.caption.22}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces NewOperation Page}}{25}{figure.caption.23}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces AJAX Call}}{25}{figure.caption.24}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Extracting meta-data from video files}}{27}{figure.caption.25}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Extracting meta-data from audio files}}{28}{figure.caption.26}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces ASP.NET Structure}}{14}{figure.caption.15}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Application General Structure}}{15}{figure.caption.16}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces The Model-View-Controller Pattern of ASP.NET Core}}{16}{figure.caption.17}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Design Class Diagram}}{18}{figure.caption.18}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Conceptual schema}}{20}{figure.caption.19}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Entity-Relationship Diagram}}{21}{figure.caption.20}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Physical database schema}}{22}{figure.caption.21}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces NewOperation (HttpGet Request)}}{23}{figure.caption.22}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Register a new operation Page}}{24}{figure.caption.23}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces AJAX Call}}{24}{figure.caption.24}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Extracting meta-data from video files}}{26}{figure.caption.25}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Extracting meta-data from audio files}}{27}{figure.caption.26}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces SearchOperationViewModel \& SingleOperationViewModel}}{28}{figure.caption.27}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Search for an operation Page}}{28}{figure.caption.28}
 \addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Unit Test Report}}{32}{figure.caption.29}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Responsiveness Tests}}{33}{figure.caption.30}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
