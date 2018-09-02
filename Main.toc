@@ -27,12 +27,17 @@
 \contentsline {subsection}{\numberline {4.5.1}``Register new operation'' Implementation}{21}{subsection.4.5.1}
 \contentsline {subsection}{\numberline {4.5.2}``Search for an operation'' Implementation}{25}{subsection.4.5.2}
 \contentsline {subsection}{\numberline {4.5.3}``Operation Details'' Implementation}{26}{subsection.4.5.3}
-\contentsline {chapter}{\numberline {5}Debugging, Testing and Critical Evaluation}{29}{chapter.5}
+\contentsline {chapter}{\numberline {5}Debugging, Testing and Results Evaluation}{29}{chapter.5}
 \contentsline {section}{\numberline {5.1}Unit Testing with MSTest}{29}{section.5.1}
 \contentsline {section}{\numberline {5.2}Responsiveness Tests-Cross Browser Compatibility}{31}{section.5.2}
-\contentsline {section}{\numberline {5.3}Acceptance Testing}{31}{section.5.3}
+\contentsline {section}{\numberline {5.3}System Testing}{31}{section.5.3}
 \contentsline {chapter}{\numberline {6}Conclusion and Project evaluation}{34}{chapter.6}
-\contentsline {chapter}{Appendices}{35}{chapter.6}
-\contentsline {chapter}{\numberline {A}Source Code}{35}{appendix.A}
-\contentsline {chapter}{\numberline {B}System Manual}{36}{appendix.B}
-\contentsline {chapter}{Bibliography}{37}{appendix.B}
+\contentsline {section}{\numberline {6.1}Project Goals}{34}{section.6.1}
+\contentsline {section}{\numberline {6.2}Fulfilment of Personal Aims}{35}{section.6.2}
+\contentsline {section}{\numberline {6.3}Critical Evaluation}{36}{section.6.3}
+\contentsline {section}{\numberline {6.4}Future Work}{36}{section.6.4}
+\contentsline {section}{\numberline {6.5}Conclusion}{36}{section.6.5}
+\contentsline {chapter}{Appendices}{37}{section.6.5}
+\contentsline {chapter}{\numberline {A}Source Code}{37}{appendix.A}
+\contentsline {chapter}{\numberline {B}System Manual}{38}{appendix.B}
+\contentsline {chapter}{Bibliography}{39}{appendix.B}

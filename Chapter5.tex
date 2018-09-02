@@ -1,20 +1,11 @@
-\chapter{Debugging, Testing and Critical Evaluation}
+\chapter{Debugging, Testing and Results Evaluation}
 \label{testing}
 
 
 
-
 In order to ensure that the functionalities of the application have been achieved and abnormal/erroneous interactions have been eliminated, it is very important to debug and test a system as a whole and its individual parts during and thereafter the implementation. 
-Over the development of the project, fro testing the correctness, completeness and quality of the application, the test process was divided into two main phases: unit testing\cite{unit} and user testing. Unit testing was performed throughout the development of the application while user testing was performed towards the completion of the development stage. In this chapter, the outcomes of both testing procedures will be discussed.
+Over the development of the project, fro testing the correctness, completeness and quality of the application, the test process was divided into three main phases: unit testing\cite{unit}, responsiveness tests and system testing. Unit testing was performed throughout the development of the application while responsiveness testing and system testing were performed towards the completion of the development stage. In this chapter, the outcomes of all testing procedures will be discussed.
 
-
-%Mikko Poutanen PARAPHRASE IT!!!
-System testing is used to test the functionality of the entire system. Finally, acceptance testing is defined as that
-testing, which when completed successfully, will result in the customer accepting
-the software and giving us their money"[52]. Of these strategies the first three
-39Chapter 5. Testing 40
-were implemented as outlined in the remainder of this chapter. Acceptance testing wasn't applicable at this point as the application is more a proof of concept
-and only had to satisfy the author himself.
 
 \section{Unit Testing with MSTest}
 \label{unit_testing}
@@ -72,10 +63,22 @@ All pages of the application were tested in this session, one example can be see
 \caption[Responsiveness Tests]{Screen shot of how the home page of the application is displayed on different browsers} \label{responsiveness_test}
 \end{figure}
 
-%look putanen and elizabeth
-\section{Acceptance Testing}
-\label{acceptance_testing}
+
+%look huajiang wang, lucas valti and 
+\section{System Testing}
+\label{system_testing}
 
 
-ensures overall product is acceptable for delivery from the client perspective.
+The aim of system testing is to establish that the system meets the functional and non functional requirements defined in Chapter \ref{chapterlabel3} \cite{system_testing}. In the test plan that was followed, the test object in system testing was the whole application. At this phase, the testing method was to invite three volunteers to participate in the  test and ask them to finish a sequence of operations according to different scenarios. 
+
+
+
+
+\begin{itemize}
+  \item \textbf{Scenario one:}\\
+  The volunteers are initially provided with sample operation's informations and files and are asked to upload the operation to the system. The volunteers can operate in their own way without any constrains or interference. 
+    \item \textbf{Scenario two:}\\ 
+The volunteers are asked to navigate to the home page and start searching for a specific operation using the pre-defined filters. The volunteers are then provided with all the information related to a specific operation and are asked to use the filters in order to find the stored operation in the database. The volunteers are then asked to load all the relevant information of the operation and view the details of the operation in question.
+\end{itemize}
+
 

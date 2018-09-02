@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.13)  1 SEP 2018 19:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.13)  2 SEP 2018 16:04
 entering extended mode
 **./Main.tex
 (Main.tex
@@ -723,7 +723,7 @@ line 93.
 \openout2 = `Preamble.aux'.
 
  (Preamble.tex
-<imgs/ucl_logo.png, id=153, 636.87938pt x 301.125pt>
+<imgs/ucl_logo.png, id=173, 636.87938pt x 301.125pt>
 File: imgs/ucl_logo.png Graphic file (type png)
 <use imgs/ucl_logo.png>
 Package pdftex.def Info: imgs/ucl_logo.png  used on input line 4.
@@ -873,7 +873,7 @@ been already used, duplicate ignored
                    \relax 
 l.107 
        [6]
-<imgs/Domain_Model.png, id=314, 585.83868pt x 324.31163pt>
+<imgs/Domain_Model.png, id=339, 585.83868pt x 324.31163pt>
 File: imgs/Domain_Model.png Graphic file (type png)
 <use imgs/Domain_Model.png>
 Package pdftex.def Info: imgs/Domain_Model.png  used on input line 113.
@@ -905,7 +905,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imgs/Use_Case_Diagram.png, id=327, 352.31625pt x 280.04625pt>
+<imgs/Use_Case_Diagram.png, id=352, 352.31625pt x 280.04625pt>
 File: imgs/Use_Case_Diagram.png Graphic file (type png)
 <use imgs/Use_Case_Diagram.png>
 Package pdftex.def Info: imgs/Use_Case_Diagram.png  used on input line 215.
@@ -919,7 +919,7 @@ Package nag Warning: `center' environment in figure.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [9]
-<imgs/Add_New_Operation.png, id=338, 627.84563pt x 542.025pt>
+<imgs/Add_New_Operation.png, id=363, 627.84563pt x 542.025pt>
 File: imgs/Add_New_Operation.png Graphic file (type png)
 <use imgs/Add_New_Operation.png>
 Package pdftex.def Info: imgs/Add_New_Operation.png  used on input line 235.
@@ -932,7 +932,7 @@ Package nag Warning: `center' environment in figure.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imgs/Search_For_Operation.png, id=340, 634.62094pt x 477.28313pt>
+<imgs/Search_For_Operation.png, id=365, 634.62094pt x 477.28313pt>
 File: imgs/Search_For_Operation.png Graphic file (type png)
 <use imgs/Search_For_Operation.png>
 Package pdftex.def Info: imgs/Search_For_Operation.png  used on input line 242.
@@ -945,7 +945,7 @@ Package nag Warning: `center' environment in figure.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imgs/Operation_Details.png, id=341, 627.09282pt x 542.025pt>
+<imgs/Operation_Details.png, id=366, 627.09282pt x 542.025pt>
 File: imgs/Operation_Details.png Graphic file (type png)
 <use imgs/Operation_Details.png>
 Package pdftex.def Info: imgs/Operation_Details.png  used on input line 249.
@@ -964,7 +964,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 (Chapter4.tex
 Chapter 4.
-<imgs/asp_structure.jpg, id=365, 334.24875pt x 78.2925pt>
+<imgs/asp_structure.jpg, id=390, 334.24875pt x 78.2925pt>
 File: imgs/asp_structure.jpg Graphic file (type jpg)
 <use imgs/asp_structure.jpg>
 Package pdftex.def Info: imgs/asp_structure.jpg  used on input line 18.
@@ -978,7 +978,7 @@ Package nag Warning: `center' environment in figure.
 
 
  <./imgs/asp_structure.jpg>]
-<imgs/Application_Structure.png, id=372, 963.6pt x 542.025pt>
+<imgs/Application_Structure.png, id=397, 963.6pt x 542.025pt>
 File: imgs/Application_Structure.png Graphic file (type png)
 <use imgs/Application_Structure.png>
 Package pdftex.def Info: imgs/Application_Structure.png  used on input line 38.
@@ -990,7 +990,7 @@ Package nag Warning: `center' environment in figure.
 (nag)                Maybe you want \centering instead on input line 39.
 
 [15 <./imgs/Application_Structure.png>]
-<imgs/mvc.png, id=383, 385.44pt x 245.718pt>
+<imgs/mvc.png, id=408, 385.44pt x 245.718pt>
 File: imgs/mvc.png Graphic file (type png)
 <use imgs/mvc.png>
 Package pdftex.def Info: imgs/mvc.png  used on input line 58.
@@ -1001,7 +1001,7 @@ Package nag Warning: `center' environment in figure.
 (nag)                Maybe you want \centering instead on input line 59.
 
 [16 <./imgs/mvc.png>] [17]
-<imgs/Design_Diagram.png, id=409, 1111.2717pt x 840.2592pt>
+<imgs/Design_Diagram.png, id=434, 1111.2717pt x 840.2592pt>
 File: imgs/Design_Diagram.png Graphic file (type png)
 <use imgs/Design_Diagram.png>
 Package pdftex.def Info: imgs/Design_Diagram.png  used on input line 88.
@@ -1018,7 +1018,7 @@ LaTeX Warning: Float too large for page by 57.70691pt on input line 91.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [18 <./imgs/Design_Diagram.png>]
-<imgs/conceptual_schema.png, id=418, 650.88168pt x 442.65375pt>
+<imgs/conceptual_schema.png, id=443, 650.88168pt x 442.65375pt>
 File: imgs/conceptual_schema.png Graphic file (type png)
 <use imgs/conceptual_schema.png>
 Package pdftex.def Info: imgs/conceptual_schema.png  used on input line 113.
@@ -1031,7 +1031,7 @@ Package nag Warning: `center' environment in figure.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imgs/er_diagram.png, id=421, 497.30794pt x 436.78181pt>
+<imgs/er_diagram.png, id=446, 497.30794pt x 436.78181pt>
 File: imgs/er_diagram.png Graphic file (type png)
 <use imgs/er_diagram.png>
 Package pdftex.def Info: imgs/er_diagram.png  used on input line 130.
@@ -1051,7 +1051,7 @@ Underfull \vbox (badness 1975) has occurred while \output is active []
 
 
 ]
-<imgs/physical_schema.png, id=429, 614.295pt x 794.97pt>
+<imgs/physical_schema.png, id=454, 614.295pt x 794.97pt>
 File: imgs/physical_schema.png Graphic file (type png)
 <use imgs/physical_schema.png>
 Package pdftex.def Info: imgs/physical_schema.png  used on input line 142.
@@ -1072,7 +1072,7 @@ LaTeX Warning: Text page 22 contains only floats.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [22 <./imgs/physical_schema.png>]
-<imgs/new_operation_get.jpg, id=447, 661.2705pt x 137.313pt>
+<imgs/new_operation_get.jpg, id=472, 661.2705pt x 137.313pt>
 File: imgs/new_operation_get.jpg Graphic file (type jpg)
 <use imgs/new_operation_get.jpg>
 Package pdftex.def Info: imgs/new_operation_get.jpg  used on input line 163.
@@ -1082,7 +1082,7 @@ Package pdftex.def Info: imgs/new_operation_get.jpg  used on input line 163.
 Package nag Warning: `center' environment in figure.
 (nag)                Maybe you want \centering instead on input line 164.
 
-<imgs/new_operation_page.jpg, id=451, 914.81775pt x 477.58424pt>
+<imgs/new_operation_page.jpg, id=476, 914.81775pt x 477.58424pt>
 File: imgs/new_operation_page.jpg Graphic file (type jpg)
 <use imgs/new_operation_page.jpg>
 Package pdftex.def Info: imgs/new_operation_page.jpg  used on input line 175.
@@ -1091,7 +1091,7 @@ Package pdftex.def Info: imgs/new_operation_page.jpg  used on input line 175.
 Package nag Warning: `center' environment in figure.
 (nag)                Maybe you want \centering instead on input line 176.
 
-<imgs/ajax.jpg, id=452, 296.90926pt x 158.39175pt>
+<imgs/ajax.jpg, id=477, 296.90926pt x 158.39175pt>
 File: imgs/ajax.jpg Graphic file (type jpg)
 <use imgs/ajax.jpg>
 Package pdftex.def Info: imgs/ajax.jpg  used on input line 182.
@@ -1104,7 +1104,7 @@ Package nag Warning: `center' environment in figure.
 Underfull \vbox (badness 1092) has occurred while \output is active []
 
  [24 <./imgs/new_operation_page.jpg> <./imgs/ajax.jpg>]
-<imgs/video_extracting.jpg, id=465, 334.851pt x 286.06876pt>
+<imgs/video_extracting.jpg, id=490, 334.851pt x 286.06876pt>
 File: imgs/video_extracting.jpg Graphic file (type jpg)
 <use imgs/video_extracting.jpg>
 Package pdftex.def Info: imgs/video_extracting.jpg  used on input line 197.
@@ -1114,7 +1114,7 @@ Package pdftex.def Info: imgs/video_extracting.jpg  used on input line 197.
 Package nag Warning: `center' environment in figure.
 (nag)                Maybe you want \centering instead on input line 198.
 
-<imgs/audio_extracting.jpg, id=466, 387.24675pt x 269.20575pt>
+<imgs/audio_extracting.jpg, id=491, 387.24675pt x 269.20575pt>
 File: imgs/audio_extracting.jpg Graphic file (type jpg)
 <use imgs/audio_extracting.jpg>
 Package pdftex.def Info: imgs/audio_extracting.jpg  used on input line 204.
@@ -1124,7 +1124,7 @@ Package nag Warning: `center' environment in figure.
 (nag)                Maybe you want \centering instead on input line 205.
 
 [25]
-<imgs/two_view_models.jpg, id=474, 290.88675pt x 185.493pt>
+<imgs/two_view_models.jpg, id=499, 290.88675pt x 185.493pt>
 File: imgs/two_view_models.jpg Graphic file (type jpg)
 <use imgs/two_view_models.jpg>
 Package pdftex.def Info: imgs/two_view_models.jpg  used on input line 221.
@@ -1134,7 +1134,7 @@ Package pdftex.def Info: imgs/two_view_models.jpg  used on input line 221.
 Package nag Warning: `center' environment in figure.
 (nag)                Maybe you want \centering instead on input line 222.
 
-<imgs/search_operation_page.jpg, id=475, 898.557pt x 551.05875pt>
+<imgs/search_operation_page.jpg, id=500, 898.557pt x 551.05875pt>
 File: imgs/search_operation_page.jpg Graphic file (type jpg)
 <use imgs/search_operation_page.jpg>
 Package pdftex.def Info: imgs/search_operation_page.jpg  used on input line 228
@@ -1159,54 +1159,59 @@ Chapter 5.
 
 
 ] [30]
-<imgs/unit_tests.jpg, id=514, 507.69675pt x 628.14674pt>
+<imgs/unit_tests.jpg, id=539, 507.69675pt x 628.14674pt>
 File: imgs/unit_tests.jpg Graphic file (type jpg)
 <use imgs/unit_tests.jpg>
-Package pdftex.def Info: imgs/unit_tests.jpg  used on input line 53.
+Package pdftex.def Info: imgs/unit_tests.jpg  used on input line 44.
 (pdftex.def)             Requested size: 483.69684pt x 598.46129pt.
 
 
 Package nag Warning: `center' environment in figure.
-(nag)                Maybe you want \centering instead on input line 54.
+(nag)                Maybe you want \centering instead on input line 45.
 
-<imgs/responsiveness_test.jpg, id=516, 623.32875pt x 517.33275pt>
+<imgs/responsiveness_test.jpg, id=541, 623.32875pt x 517.33275pt>
 File: imgs/responsiveness_test.jpg Graphic file (type jpg)
 <use imgs/responsiveness_test.jpg>
-Package pdftex.def Info: imgs/responsiveness_test.jpg  used on input line 70.
+Package pdftex.def Info: imgs/responsiveness_test.jpg  used on input line 61.
 (pdftex.def)             Requested size: 483.69684pt x 401.44972pt.
 
 Package nag Warning: `center' environment in figure.
-(nag)                Maybe you want \centering instead on input line 71.
+(nag)                Maybe you want \centering instead on input line 62.
 
-) [31] [32 <./imgs/unit_tests.jpg>] [33 <./imgs/responsiveness_test.jpg>]
+[31]) [32 <./imgs/unit_tests.jpg>] [33 <./imgs/responsiveness_test.jpg>]
 \openout2 = `Chapter6.aux'.
 
 
 (Chapter6.tex
 Chapter 6.
-) [34
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 9.
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+Underfull \vbox (badness 1043) has occurred while \output is active []
+
+ [34
 
 
 
 ]
+Underfull \vbox (badness 3792) has occurred while \output is active []
+
+ [35])
+[36]
 \openout2 = `Appendices.aux'.
 
  (Appendices.tex
 Appendix A.
-[35
+[37
 
 
 
 ]
 Appendix B.
-) [36
+) [38
 
-] (Main.bbl
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 21.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-[37
+] (Main.bbl [39
 
 
 ])
@@ -1223,25 +1228,28 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 Package nag Warning: 22 complaints in total.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 139.
-[38]
+[40]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 139.
  (Main.aux (Preamble.aux) (Chapter1.aux) (Chapter2.aux) (Chapter3.aux)
 (Chapter4.aux) (Chapter5.aux) (Chapter6.aux) (Appendices.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 139.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 139.
 Package rerunfilecheck Info: File `Main.out' has not changed.
-(rerunfilecheck)             Checksum: 2119C4515EF3EA045DBE547F2B878818;2690.
+(rerunfilecheck)             Checksum: EB5453208F62DDC1CEA24B76D035A5B3;3007.
  ) 
 Here is how much of TeX's memory you used:
- 11118 strings out of 493305
- 167072 string characters out of 3138845
- 298478 words of memory out of 3000000
- 14191 multiletter control sequences out of 15000+200000
+ 11135 strings out of 493305
+ 167276 string characters out of 3138845
+ 298510 words of memory out of 3000000
+ 14199 multiletter control sequences out of 15000+200000
  65001 words of font info for 99 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,18n,92p,1133b,520s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{cite.clean_coder} has been referenced but does no
-t exist, replaced by a fixed one
+ 55i,18n,92p,2501b,520s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{cite.system_testing} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.clean_coder} has been referenced but does not 
+exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{cite.tdd2} has been referenced but does not exist, 
 replaced by a fixed one
@@ -1301,9 +1309,9 @@ pdfTeX warning (dest): name{cite.Software_Requirements} has been referenced but
 eX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
 pe1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utm
 r8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Main.pdf (45 pages, 2644606 bytes).
+Output written on Main.pdf (47 pages, 2653309 bytes).
 PDF statistics:
- 636 PDF objects out of 1000 (max. 8388607)
- 161 named destinations out of 1000 (max. 500000)
- 415 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 678 PDF objects out of 1000 (max. 8388607)
+ 170 named destinations out of 1000 (max. 500000)
+ 455 words of extra memory for PDF output out of 10000 (max. 10000000)
 

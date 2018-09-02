@@ -122,4 +122,10 @@ Robert Martin.
   (Robert C. Martin)}}.
 \newblock May 2011.
 
+\bibitem{system_testing}
+System testing fundamentals.
+\newblock Available at:
+  \url{http://softwaretestingfundamentals.com/system-testing/}, January 2011.
+\newblock Accessed: [20 August 2018].
+
 \end{thebibliography}
