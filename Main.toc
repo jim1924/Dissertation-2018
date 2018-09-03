@@ -34,10 +34,16 @@
 \contentsline {chapter}{\numberline {6}Conclusion and Project evaluation}{34}{chapter.6}
 \contentsline {section}{\numberline {6.1}Project Goals}{34}{section.6.1}
 \contentsline {section}{\numberline {6.2}Fulfilment of Personal Aims}{35}{section.6.2}
-\contentsline {section}{\numberline {6.3}Critical Evaluation}{36}{section.6.3}
+\contentsline {section}{\numberline {6.3}Critical Evaluation}{35}{section.6.3}
 \contentsline {section}{\numberline {6.4}Future Work}{36}{section.6.4}
 \contentsline {section}{\numberline {6.5}Conclusion}{36}{section.6.5}
-\contentsline {chapter}{Appendices}{37}{section.6.5}
-\contentsline {chapter}{\numberline {A}Source Code}{37}{appendix.A}
-\contentsline {chapter}{\numberline {B}System Manual}{38}{appendix.B}
-\contentsline {chapter}{Bibliography}{39}{appendix.B}
+\contentsline {chapter}{Appendices}{38}{section.6.5}
+\contentsline {chapter}{\numberline {A}Source Code}{38}{appendix.A}
+\contentsline {section}{\numberline {A.1}Database creation}{38}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}View Creation}{44}{subsection.A.1.1}
+\contentsline {section}{\numberline {A.2}Home Controller}{44}{section.A.2}
+\contentsline {section}{\numberline {A.3}Database Context}{56}{section.A.3}
+\contentsline {section}{\numberline {A.4}File Storage Controller}{76}{section.A.4}
+\contentsline {section}{\numberline {A.5}Media Utilities Controller }{82}{section.A.5}
+\contentsline {chapter}{\numberline {B}System Manual}{94}{appendix.B}
+\contentsline {chapter}{Bibliography}{95}{appendix.B}

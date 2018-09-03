@@ -5,13 +5,1800 @@
 \appendix
 \chapter{Source Code}
 \label{app:source_code}
+The following pages include a significant port of the project source code. Nonetheless, all the application's code could not fit in the current report because of its quantity and thus the rest of the code can be found on github at: \url{https://github.com/jim1924/Summer-Project-2018-Sensor-Fusion} or in the zip files accompanying this report. The code contained in this chapter, represents the post complicated programming features that have been implemented. Finally, any code that has been referenced throughout the writing of this report is provided in full here. The code listing contains files for only two of the four languages used, which are MySQL and C\# , since those parts are the most interesting and contain the back-end of the application.
 
-katherine hinke
+\section{Database creation}
+\begin{lstlisting}
+drop database Sensor_FusionV1;
+CREATE DATABASE Sensor_FusionV1;
+USE Sensor_FusionV1;
+CREATE TABLE `Hospital` (
+  `hospitalID` int auto_increment,
+  `name` nvarchar(30),
+  `locale` nvarchar(30),
+  `address` nvarchar(45),
+  `postCode` nvarchar(15),
+  `city` nvarchar(30),
+  PRIMARY KEY (`hospitalID`) 
+);
+
+#Table structure
+CREATE TABLE `Sensor` (
+  `sensorID` int auto_increment,
+  `name` nvarchar(45),
+  `description` nvarchar(60),
+  PRIMARY KEY (`sensorID`)
+);
+
+CREATE TABLE `Requirement` (
+  `checkListID` int auto_increment,
+  `description` nvarchar(100),
+  PRIMARY KEY (`checkListID`)
+);
+
+CREATE TABLE `Staff` (
+  `staffID` int auto_increment,
+  `firstName` nvarchar(30),
+  `lastName` nvarchar(30),
+  `type` nvarchar(15),
+  `speciality` nvarchar(30),
+  `hiringDate` datetime,
+  `address` nvarchar(45),
+  `phoneNo` nvarchar(30),
+  PRIMARY KEY (`staffID`)
+);
+
+CREATE TABLE `Type_Of_Operation` (
+  `operationTypeID` int auto_increment,
+  `description` nvarchar(45),
+  PRIMARY KEY (`operationTypeID`)
+);
+CREATE TABLE `Patient` (
+  `patientID` bigint auto_increment,
+  `firstName` nvarchar(30),
+  `lastName` nvarchar(30),
+  `address` nvarchar(45),
+  `postCode` nvarchar(15),
+  `phoneNo` nvarchar(30),
+  PRIMARY KEY (`patientID`)
+);
+
+CREATE TABLE `Hospital_Operating_Room` (
+  `hospitalID` int,
+  `roomNO` nvarchar(15) NOT NULL,
+  `size_m2` int,
+  PRIMARY KEY (`roomNO`,`hospitalID`),
+  FOREIGN KEY (hospitalID)  REFERENCES Hospital(hospitalID)
+  ON DELETE CASCADE
+);
+
+CREATE TABLE `Operation` (
+  `patientID` bigint,
+  `hospitalID` int,
+  `roomNO` nvarchar(15),
+  `dateStamp` datetime,
+  `duration_ms` double,
+  `operationID` bigint AUTO_INCREMENT NOT NULL,
+  `operationTypeID` int,
+  `uploadedDate` datetime,
+  PRIMARY KEY (`operationID`),
+  FOREIGN KEY (hospitalID) 
+  REFERENCES Hospital(hospitalID) ON DELETE SET NULL,
+  FOREIGN KEY (patientID)
+  REFERENCES Patient(patientID)ON DELETE SET NULL,
+  FOREIGN KEY (operationTypeID)
+  REFERENCES Type_Of_Operation(operationTypeID)ON DELETE SET NULL,
+  FOREIGN KEY (roomNO)
+  REFERENCES Hospital_Operating_Room(roomNO)ON DELETE SET NULL
+);
+
+CREATE TABLE `Video` (
+  `videoID` bigint auto_increment,
+  `operationID` bigint,
+  `size_bytes` int,
+  `type` nvarchar(50),
+  `duration_ms` double,
+  `timeStamp` datetime,
+  `fileName` nvarchar(30),
+  `fullPath` nvarchar(120),
+  PRIMARY KEY (`videoID`),
+  FOREIGN KEY (operationID)
+  REFERENCES Operation(operationID) ON DELETE SET NULL
+);
+
+CREATE TABLE `Monitor_System_File` (
+  `monitorFileID` bigint auto_increment,
+  `operationID` bigint,
+  `size_bytes` int,
+  `type` nvarchar(50),
+  `timeStamp` datetime,
+  `fileName` nvarchar(30),
+  `fullPath` nvarchar(120),
+  PRIMARY KEY (`monitorFileID`),
+  FOREIGN KEY (operationID)
+  REFERENCES Operation(operationID) ON DELETE SET NULL
+);
+
+CREATE TABLE `Audio` (
+  `audioID` bigint auto_increment,
+  `operationID` bigint,
+  `size_bytes` int,
+  `type` nvarchar(50),
+  `duration_ms` double,
+  `timeStamp` datetime,
+  `fileName` nvarchar(30),
+  `fullPath` nvarchar(120),
+  PRIMARY KEY (`audioID`),
+  FOREIGN KEY (operationID)
+  REFERENCES Operation(operationID) ON DELETE SET NULL
+);
+
+CREATE TABLE `Sensor_Reading` (
+  `sensorID` int AUTO_INCREMENT,
+  `operationID` bigint,
+  `timeStamp` datetime,
+  `Measurement1` decimal(10,4),
+  `Measurement2` decimal(10,4),
+  `Measurement3` decimal(10,4),
+  PRIMARY KEY (`sensorID`,`timeStamp`, `operationID`),
+  FOREIGN KEY (sensorID)
+  REFERENCES Sensor(sensorID) ON DELETE cascade,
+  FOREIGN KEY (operationID)
+  REFERENCES Operation(operationID)ON delete cascade
+);
+
+CREATE TABLE `CheckList_Recording` (
+  `operationID` bigint,
+  `checkListID` int,
+  `operationTypeID` int,
+  PRIMARY KEY (`operationID`,`checkListID`),
+  FOREIGN KEY (operationTypeID)
+  REFERENCES Type_Of_Operation(operationTypeID)ON DELETE SET NULL,
+  FOREIGN KEY (checkListID)
+  REFERENCES Requirement(checkListID)ON DELETE cascade,
+  FOREIGN KEY (operationID)
+  REFERENCES Operation(operationID)ON DELETE cascade
+);
+
+CREATE TABLE `Operations_Staff` (
+  `operationID` bigint,
+  `staffID` int,
+  PRIMARY KEY (`operationID`,`staffID`),
+  FOREIGN KEY (staffID)
+  REFERENCES Staff(staffID)ON DELETE cascade,
+  FOREIGN KEY (operationID)
+  REFERENCES Operation(operationID)ON DELETE cascade
+);
+
+CREATE TABLE `Monitoring_System_Reading` (
+  `operationID` bigint auto_increment,
+  `dateStamp` datetime,
+  `heartRate` int,
+  `bloodPressure` int,
+  `pulse` int,
+  `respiratoryRate` int,
+  `oxygenLevel` int,
+  PRIMARY KEY (`operationID`,`dateStamp`),
+  FOREIGN KEY (operationID)
+  REFERENCES Operation(operationID)ON DELETE cascade
+);
+
+CREATE TABLE `Requirements_Per_Type` (
+  `operationTypeID` int,
+  `checkListID` int,
+  PRIMARY KEY (`operationTypeID`,`checkListID`),
+  FOREIGN KEY (operationTypeID)
+  REFERENCES Type_Of_Operation(operationTypeID)ON DELETE cascade,
+  FOREIGN KEY (checkListID)
+  REFERENCES CheckList_Recording(checkListID)ON DELETE cascade
+); 
+
+\end{lstlisting}
+
+\subsection{View Creation}
+\begin{lstlisting}
+CREATE VIEW twentyOperations
+AS SELECT *
+FROM operation
+order by operationID desc
+Limit 20;
+\end{lstlisting}
+
+
+\section{Home Controller}
+\begin{lstlisting}
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using SensorFusion.Models;
+using SensorFusion.ViewModels;
+
+namespace SensorFusion.Controllers
+{
+public class HomeController : Controller
+{
+DBContext _context;
+private IHostingEnvironment _hostingEnvironment;
+
+
+public HomeController(DBContext context, IHostingEnvironment environment)
+{
+_context = context;
+_hostingEnvironment = environment;
+}
+
+
+[HttpGet]
+public IActionResult Index()
+{
+var searchOperationModel = new SearchOperationViewModel();
+var newOperationModel = new NewOperationFormViewModel();
+
+newOperationModel.typesOfOperation = new SelectList(_context.GetAllTypes()
+	.Select(x => new SelectListItem {
+	 Value = x.operationTypeID.ToString(), Text = x.name 
+	 }), "Value", "Text");
+
+newOperationModel.staff = new SelectList(_context.GetAllStaff()
+.Select(x => new SelectListItem {
+Value = x.staffID.ToString(),
+Text = "ID: " + x.staffID + " " + x.firstName + " " + x.lastName
+}), "Value", "Text");
+
+newOperationModel.hospitals = new SelectList(_context.GetAllHospitals()
+.Select(x => new SelectListItem {
+Value = x.hospitalID.ToString(), Text = x.name 
+}), "Value", "Text");
+
+newOperationModel.patients = new SelectList(_context.GetAllPatients()
+.Select(x => new SelectListItem {
+Value = x.patientID.ToString(),
+Text = "ID: " + x.patientID + " " + x.firstName + " " + x.lastName
+}), "Value", "Text");
+
+
+SelectListItem defau = new SelectListItem {
+Text = "Please select a room...", Value = "error", Selected = true };
+
+List<SelectListItem> defaultSelection = new List<SelectListItem>();
+defaultSelection.Add(defau);
+newOperationModel.rooms = defaultSelection;
+searchOperationModel.ViewOperations = _context.Get20MostRecentOperations();
+searchOperationModel.searchFields = newOperationModel;
+return View(searchOperationModel);
+}
+
+
+
+[HttpPost]
+[AutoValidateAntiforgeryToken]
+public IActionResult Index(SearchOperationViewModel model)
+{
+bool hospitalSelected = model.searchFields.hospitalID != 0;
+bool roomSelected = !model.searchFields.roomNo.Equals("error");
+bool fromDateSelected = !(model.searchFields.fromDate == new DateTime());
+bool toDateSelected = !(model.searchFields.toDate == new DateTime());
+bool staffSelected = model.searchFields.staffIDs != null;
+bool patientSelected = model.searchFields.patientID != 0;
+
+
+var searchOperationModel = new SearchOperationViewModel();
+
+
+
+var condition1=hospitalSelected || roomSelected || fromDateSelected;
+var condition2= toDateSelected || staffSelected || patientSelected;
+
+if (condition1||condition2)
+{
+Operation filters = new Operation();
+filters.fromDate = model.searchFields.fromDate;
+filters.toDate = model.searchFields.toDate;
+if (hospitalSelected)
+{
+filters.hospitalID = model.searchFields.hospitalID;
+}
+if (roomSelected)
+{
+filters.roomNO = model.searchFields.roomNo;
+}
+if (staffSelected)
+{
+filters.staffIDs = model.searchFields.staffIDs;
+}
+if (patientSelected)
+{
+filters.patientID = model.searchFields.patientID;
+}
+
+var newOperationModel = new NewOperationFormViewModel();
+
+newOperationModel.typesOfOperation = new SelectList(_context.GetAllTypes()
+.Select(x => new SelectListItem {
+Value = x.operationTypeID.ToString(), Text = x.name }), "Value", "Text");
+
+newOperationModel.staff = new SelectList(_context.GetAllStaff()
+.Select(x => new SelectListItem { Value = x.staffID.ToString(),
+Text = "ID: " + x.staffID + " " + x.firstName + " " + x.lastName
+}), "Value", "Text");
+
+
+newOperationModel.hospitals = new SelectList(_context.GetAllHospitals()
+	.Select(x => new SelectListItem {
+	Value = x.hospitalID.ToString(), Text =x.name }),"Value", "Text");
+
+newOperationModel.patients = new SelectList(_context.GetAllPatients()
+	.Select(x => new SelectListItem {
+	Value = x.patientID.ToString(), 
+	Text = "ID: " + x.patientID + " " + x.firstName + " " + x.lastName 
+	}), "Value", "Text");
+
+
+SelectListItem defau = new SelectListItem {
+	 Text="Please select a room...",Value = "error", Selected =true };
+
+List<SelectListItem> defaultSelection = new List<SelectListItem>();
+defaultSelection.Add(defau);
+newOperationModel.rooms = defaultSelection;
+searchOperationModel.searchFields = newOperationModel;
+
+searchOperationModel.ViewOperations = _context.Get20MostRecentOperations();
+
+searchOperationModel.ViewOperations=_context.GetFilteredOperations(filters);
+
+return View(searchOperationModel);
+}
+
+
+
+
+return RedirectToAction("Index");
+}
+
+[HttpGet]
+public IActionResult Details(long id)
+{
+SingleOperationViewModel model = _context.GetFullDetailsOfOperation(id);
+
+if (model == null)
+{
+return RedirectToAction("Index");
+}
+return View(model);
+}
+
+
+
+[HttpGet]
+public IActionResult NewOperation()
+{
+var model = new NewOperationFormViewModel();
+
+model.typesOfOperation = new SelectList(_context.GetAllTypes()
+	.Select(x=>new SelectListItem {Value =x.operationTypeID.ToString(),
+	Text = x.name }), "Value", "Text");
+
+model.staff = new SelectList(_context.GetAllStaff()
+	.Select(x => new SelectListItem { Value = x.staffID.ToString(), 
+	Text ="ID: "+ x.staffID+ " "+x.firstName +" "+ x.lastName
+	}), "Value", "Text");
+
+
+model.hospitals = new SelectList(_context.GetAllHospitals()
+	.Select(x => new SelectListItem { Value = x.hospitalID.ToString(), 
+	Text = x.name }), "Value", "Text");
+
+model.patients = new SelectList(_context.GetAllPatients()
+	.Select(x => new SelectListItem { Value = x.patientID.ToString(), 
+	Text ="ID: "+x.patientID+" "+  x.firstName+" "+ x.lastName 
+	}), "Value", "Text");
+
+SelectListItem defau = new SelectListItem {
+	 Text = "Please select a room...", Value ="error",Selected=true};
+List<SelectListItem> defaultSelection=new List<SelectListItem>();
+defaultSelection.Add(defau);
+model.rooms = defaultSelection;
+
+
+return View(model);	
+}
+
+
+[HttpPost]
+[AutoValidateAntiforgeryToken]
+public async Task<IActionResult>NewOperation(NewOperationFormViewModel model)
+{
+
+BlobsController storage = new BlobsController(_hostingEnvironment);
+var path = _hostingEnvironment.WebRootPath;
+long nextID =_context.GetNextOperationID();
+string containerName = "operation" + nextID;
+model.maxDuration = 0;
+model.date = new DateTime(9000, 1, 1);
+if (model.videoFiles!=null)
+{
+int i = 1;
+model.videos = new List<Video>();
+foreach (var VideoFile in model.videoFiles)
+{
+if (VideoFile.Length > 0)
+{
+string[] type = VideoFile.ContentType.ToString().Split('/');
+if (!type[0].Equals("video"))
+{
+continue;
+}
+string videoName = "video" + i+"."+type[1];
+await storage.UploadBlob(containerName, videoName, VideoFile);
+var uploads = Path.Combine(_hostingEnvironment.WebRootPath, "TempFiles");
+var filePath = Path.Combine(uploads, videoName);
+MediaUtilities mediaUtil;
+mediaUtil=new MediaUtilities(_hostingEnvironment,videoName);
+using (var fileStream = new FileStream(filePath, FileMode.Create))
+{
+await VideoFile.CopyToAsync(fileStream);
+}
+string fullVideoPath = storage.GetBlobFullPath(containerName, videoName);
+
+model.videos.Add(new Video() {
+OperationID = nextID,
+size_bytes = mediaUtil.GetVideoSize(),
+timeStamp = mediaUtil.GetVideoEncodedDate(),
+type = type[1],
+duration = mediaUtil.GetVideoDuration().TotalMilliseconds,
+fileName = videoName,
+fullPath = fullVideoPath
+
+});
+
+
+
+if (mediaUtil.GetVideoDuration().TotalMilliseconds>model.maxDuration)
+{
+model.maxDuration = mediaUtil.GetVideoDuration().TotalMilliseconds;
+}
+if (model.date.CompareTo(mediaUtil.GetVideoEncodedDate()) > 0)
+{
+model.date = mediaUtil.GetVideoEncodedDate();
+}
+i++;
+}
+}
+}
+
+
+
+
+if (model.audioFiles != null)
+{
+int i = 1;
+model.audios = new List<Audio>();
+foreach (var audioFile in model.audioFiles)
+{
+if (audioFile.Length > 0)
+{
+
+string[] type = audioFile.ContentType.ToString().Split('/');
+if (!type[0].Equals("audio"))
+{
+continue;
+}
+string audioName = "audio" + i + "." + type[1];
+await storage.UploadBlob(containerName, audioName, audioFile);
+var uploads=Path.Combine(_hostingEnvironment.WebRootPath,"TempFiles");
+var filePath = Path.Combine(uploads, audioName);
+MediaUtilities mediaUtil=new MediaUtilities(_hostingEnvironment,audioName);
+using (var fileStream = new FileStream(filePath, FileMode.Create))
+{
+await audioFile.CopyToAsync(fileStream);
+}
+
+
+string fullAudioPath = storage.GetBlobFullPath(containerName, audioName);
+
+model.audios.Add(new Audio()
+{
+OperationID = nextID,
+size_bytes = audioFile.Length,
+timeStamp = mediaUtil.GetAudioEarliestDate(audioFile.FileName),
+type = type[1],
+duration = mediaUtil.GetAudioDuration().TotalMilliseconds,
+fileName = audioName,
+fullPath=fullAudioPath
+});
+mediaUtil.PrintAudioAvailableProperties();
+
+
+
+
+if (mediaUtil.GetAudioDuration().TotalMilliseconds > model.maxDuration)
+{
+model.maxDuration = mediaUtil.GetAudioDuration().TotalMilliseconds;
+}
+var AudioEarlierstDate=mediaUtil.GetAudioEarliestDate(audioFile.FileName);
+if (model.date.CompareTo(AudioEarlierstDate)>0)
+{
+model.date = mediaUtil.GetAudioEarliestDate(audioFile.FileName);
+}
+i++;
+}
+}
+}
+
+if (model.monitorFile!=null)
+{
+if (model.monitorFile.Length > 0)
+{
+model.patientsMonitoringFile = new PatientsMonitoringFile();
+string[] name = model.monitorFile.FileName.Split('.');
+Console.WriteLine("The fucking name is ");
+name.ToList().ForEach(Console.WriteLine);
+string suffix = name[name.Length - 1];
+string type = model.monitorFile.ContentType.ToString();
+
+string fileMonitorName = "patients-monitoring-file"+"."+suffix;
+await storage.UploadBlob(containerName,fileMonitorName,model.monitorFile);
+var uploads = Path.Combine(_hostingEnvironment.WebRootPath, "TempFiles");
+var filePath = Path.Combine(uploads, fileMonitorName);
+MediaUtilities mediaUtil;
+mediaUtil= new MediaUtilities(_hostingEnvironment,fileMonitorName);
+using (var fileStream = new FileStream(filePath, FileMode.Create))
+{
+await model.monitorFile.CopyToAsync(fileStream);
+}
+
+
+string fullFilePath;
+fullFilePath = storage.GetBlobFullPath(containerName, fileMonitorName);
+
+
+model.patientsMonitoringFile.OperationID = nextID;
+model.patientsMonitoringFile.size_bytes = model.monitorFile.Length;
+var value=mediaUtil.GetFileEarliestDate(model.monitorFile.FileName);
+model.patientsMonitoringFile.timeStamp = value;
+model.patientsMonitoringFile.type = type;
+model.patientsMonitoringFile.fileName = fileMonitorName;
+model.patientsMonitoringFile.fullPath = fullFilePath;
+
+}
+
+}
+Console.WriteLine("the earliest recorded date is:" + model.date);
+
+MediaUtilities.CleanTempFolder(_hostingEnvironment);
+
+
+_context.InsertOperation(model);
+
+string msg="<script>alert('Operation uploaded successfully');</script>";
+TempData["msg"] = msg;
+
+return RedirectToAction(nameof(Index));
+
+}
+
+
+
+
+
+public IActionResult Contact()
+{
+ViewData["Message"] = "Your contact page.";
+
+return View();
+}
+
+public IActionResult Privacy()
+{
+return View();
+}
+
+
+}
+}
+\end{lstlisting}
+
+
+\section{Database Context}
+
+\begin{lstlisting}
+using MySql.Data.MySqlClient;
+using SensorFusion.ViewModels;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace SensorFusion.Models
+{
+
+//this class handles the interactin between
+// the application and the relational database
+public class DBContext
+{
+public string _ConnectionString { get; set; }
+
+//gets the connection string
+public DBContext(string connectionString)
+{
+this._ConnectionString = connectionString;
+}
+private MySqlConnection GetConnection()
+{
+return new MySqlConnection(_ConnectionString);
+}
+//this method returns all the hospitals 
+//stored in the database
+public IEnumerable<Hospital> GetAllHospitals()
+{
+List<Hospital> list = new List<Hospital>();
+
+
+using (MySqlConnection conn = GetConnection())
+{
+conn.Open();
+MySqlCommand cmd=new MySqlCommand("SELECT * FROM hospital",conn);
+using (MySqlDataReader reader = cmd.ExecuteReader())
+{
+while (reader.Read())
+{
+list.Add(new Hospital()
+{
+hospitalID = reader.GetInt32("hospitalID"),
+name = reader.GetString("name"),
+address = reader.GetString("address"),
+postCode = reader.GetString("postCode"),
+city = reader.GetString("city")
+});
+}
+}
+}
+
+return list;
+}
+
+//this method returns all the available types of 
+//operatins that are stored in the database
+public IEnumerable<TypeOfOperation> GetAllTypes()
+{
+List<TypeOfOperation> list = new List<TypeOfOperation>();
+
+
+using (MySqlConnection conn = GetConnection())
+{
+conn.Open();
+MySqlCommand cmd =new MySqlCommand("SELECT * FROM Type_Of_Operation",conn);
+using (MySqlDataReader reader = cmd.ExecuteReader())
+{
+while (reader.Read())
+{
+list.Add(new TypeOfOperation()
+{
+operationTypeID = reader.GetInt32("operationTypeID"),
+name = reader.GetString("description")
+});
+}
+}
+}
+
+return list;
+
+
+}
+public long GetNextOperationID()
+{
+long next = 0;
+using (MySqlConnection conn = GetConnection())
+{
+conn.Open();
+string autoInc="SELECT Auto_increment "+
+"FROM information_schema.tables WHERE table_name='operation'"
+MySqlCommand cmd = new MySqlCommand(autoInc, conn);
+using (MySqlDataReader reader = cmd.ExecuteReader())
+{
+while (reader.Read())
+{
+next = reader.GetInt64("Auto_increment");
+
+}
+}
+}
+return next;
+
+
+
+}
+//this method returns the 20 most recend operations 
+// from the database
+public IEnumerable<SingleOperationViewModel> Get20MostRecentOperations()
+{
+
+List<SingleOperationViewModel> list=new List<SingleOperationViewModel>();
+
+
+using (MySqlConnection conn = GetConnection())
+{
+conn.Open();
+MySqlCommand cmd = new MySqlCommand(
+"select twentyoperations.operationID,hospital.name AS 'Hospital Name' "
+" ,hospital_operating_room.roomNO,"+
+"twentyoperations.dateStamp,patient.firstName"+
+" AS 'Patients first name',patient.lastName AS "+
+"'Patients last name',patient.patientID " +
+" from twentyoperations inner join hospital "+
+" ON twentyoperations.hospitalID = hospital.hospitalID " +
+" inner join hospital_operating_room "+
+" ON twentyoperations.roomNO = hospital_operating_room.roomNO " +
+"inner join patient ON twentyoperations.patientID=patient.patientID ",conn);
+using (MySqlDataReader reader = cmd.ExecuteReader())
+{
+while (reader.Read())
+{
+SingleOperationViewModel operation = new SingleOperationViewModel();
+operation.date = (DateTime) reader.GetMySqlDateTime("dateStamp");
+operation.hospitalName = reader.GetString("Hospital Name");
+operation.operationID = reader.GetInt64("operationID");
+operation.patient = new Patient();
+operation.patient.firstName = reader.GetString("Patients first name");
+operation.patient.lastName = reader.GetString("Patients last name");
+operation.patient.patientID=reader.GetInt64("patientID");
+operation.roomNO = reader.GetString("roomNO");
+
+operation.staff = GetStaffForOperationID(operation.operationID);
+list.Add(operation);
+}
+}
+}
+
+return list;
+}
+
+//this method takes as input the filters entered from the user
+//and returns the results that comply to the user's criteria
+public IEnumerable<SingleOperationViewModel>GetFilteredOperations(Operation filters)
+{
+List<SingleOperationViewModel> list = new List<SingleOperationViewModel>();
+
+using (MySqlConnection conn = GetConnection())
+{
+conn.Open();
+MySqlCommand cmd = conn.CreateCommand();
+string staffQuery = "";
+if (filters.staffIDs != null)
+{
+string staffNumbers = filters.staffIDs[0].ToString();
+for (int i = 1; i < filters.staffIDs.Count(); i++)
+{
+staffNumbers = staffNumbers + "," + filters.staffIDs[i].ToString();
+}
+staffNumbers = "(" + staffNumbers + ")";
+staffQuery = "AND operation.operationID in "+
+"( select operations_staff.operationID FROM operations_staff "+
+"WHERE operations_staff.staffID in " + staffNumbers + " "+
+"group by operations_staff.operationID  having "+
+" count(operation.operationID)="+filters.staffIDs.Count().ToString()+")";
+}
+
+
+cmd.CommandText =
+"select operation.operationID,hospital.name AS 'Hospital Name', "+
+" hospital_operating_room.roomNO,operation.dateStamp,"+
+"patient.firstName AS 'Patients first name',"+
+"patient.lastName AS 'Patients last name',patient.patientID" +
+" from operation inner join hospital "+
+" ON operation.hospitalID = hospital.hospitalID" +
+" inner join hospital_operating_room ON "+
+" operation.roomNO = hospital_operating_room.roomNO" +
+" inner join patient ON operation.patientID = patient.patientID" +
+" where (operation.hospitalID=?hospitalID OR ?hospitalID=0) AND "+
+"(operation.roomNO=?roomNO OR ?roomNO IS NULL) AND "+
+"(operation.dateStamp>?fromDate OR ?fromDate IS NULL)" +
+" AND (operation.dateStamp<?toDate OR ?toDate IS NULL) AND "+
+"(operation.patientID=?patientID OR ?patientID=0) "+ staffQuery;
+
+var value1=(filters.hospitalID != 0) ? filters.hospitalID : 0;
+var value2=(filters.roomNO != null) ? filters.roomNO : null;
+var bool1=filters.fromDate != new DateTime();
+var bool2=filters.toDate != new DateTime();
+var par1=(bool1) ? filters.fromDate.ToString("yyyy-MM-dd HH:mm:ss") : null;
+var par2=(bool2) ? filters.toDate.ToString("yyyy-MM-dd HH:mm:ss") : null
+
+var par3=(filters.patientID != 0) ? filters.patientID : 0;
+
+cmd.Parameters.AddWithValue("?hospitalID", value1);
+cmd.Parameters.AddWithValue("?roomNO", value2);
+cmd.Parameters.AddWithValue("?fromDate", par1);
+cmd.Parameters.AddWithValue("?toDate",par2 );
+cmd.Parameters.AddWithValue("?patientID",par3 );
+
+
+
+
+
+using (MySqlDataReader reader = cmd.ExecuteReader())
+{
+while (reader.Read())
+{
+SingleOperationViewModel operation = new SingleOperationViewModel();
+operation.date = (DateTime)reader.GetMySqlDateTime("dateStamp");
+operation.hospitalName = reader.GetString("Hospital Name");
+operation.operationID = reader.GetInt64("operationID");
+operation.patient = new Patient();
+operation.patient.firstName = reader.GetString("Patients first name");
+operation.patient.lastName = reader.GetString("Patients last name");
+operation.patient.patientID = reader.GetInt64("patientID");
+operation.roomNO = reader.GetString("roomNO");
+operation.staff = GetStaffForOperationID(operation.operationID);
+list.Add(operation);
+
+
+}
+}
+}
+
+return list;
+
+}
+
+//this method takes as input the operation id and 
+//returns all the available information of an operation
+public SingleOperationViewModel GetFullDetailsOfOperation(long id)
+{
+SingleOperationViewModel operation = new SingleOperationViewModel();
+using (MySqlConnection conn = GetConnection())
+{
+conn.Open();
+MySqlCommand cmd = new MySqlCommand(
+"select operation.operationID, operation.duration_ms,"+
+" hospital.name AS 'Hospital Name', hospital_operating_room.roomNO, "+
+"operation.dateStamp, patient.firstName AS 'Patients first name', "+
+" patient.lastName AS 'Patients last name',"+
+" patient.patientID, type_of_operation.description" +
+" from operation inner join hospital ON "+
+"operation.hospitalID = hospital.hospitalID" +
+" inner join hospital_operating_room ON"+
+" operation.roomNO = hospital_operating_room.roomNO" +
+" inner join patient ON operation.patientID = patient.patientID" +
+" inner join type_of_operation ON "+
+"operation.operationTypeID = type_of_operation.operationTypeID" +
+" where operation.operationID='" +id+"'", conn);
+using (MySqlDataReader reader = cmd.ExecuteReader())
+{
+while (reader.Read())
+{
+operation.audioFiles = GetAudiosForOperationID(id);
+operation.staff = GetStaffForOperationID(id);
+operation.videoFiles = GetVideosForOperationID(id);
+operation.patientsMonitoringFile = GetMonitoringFileForOperationID(id);
+operation.date = (DateTime)reader.GetMySqlDateTime("dateStamp");
+operation.hospitalName = reader.GetString("Hospital Name");
+operation.operationID = reader.GetInt64("operationID");
+operation.patient = new Patient();
+operation.patient.firstName = reader.GetString("Patients first name");
+operation.patient.lastName = reader.GetString("Patients last name");
+operation.patient.patientID = reader.GetInt64("patientID");
+operation.roomNO = reader.GetString("roomNO");
+operation.type = reader.GetString("description");
+operation.duration = (double)reader.GetInt64("duration_ms") / 1000 / 60;
+
+}
+}
+}
+
+return operation;
+
+
+
+
+
+}
+//this method returns all the participated
+//staff of a specific operation
+public string GetStaffForOperationID(long id)
+{
+List<Staff> list = new List<Staff>();
+
+
+using (MySqlConnection conn = GetConnection())
+{
+conn.Open();
+MySqlCommand cmd = new MySqlCommand(
+"select * from operations_staff inner join staff on "+
+"operations_staff.staffID=staff.staffID "+
+"WHERE operations_staff.operationID='" + id +"'", conn);
+using (MySqlDataReader reader = cmd.ExecuteReader())
+{
+while (reader.Read())
+{
+Staff objectstaff = new Staff();
+objectstaff.staffID = reader.GetInt32("staffID");
+objectstaff.firstName = reader.GetString("firstName");
+objectstaff.lastName = reader.GetString("lastName");
+list.Add(objectstaff);
+}
+}
+}
+string staff= list[0].firstName + " " + list[0].lastName;
+for (int i = 1; i < list.Count; i++)
+{
+staff = staff + ", " + list[i].firstName+" "+ list[i].lastName;
+}
+return staff;
+
+}
+//this method returns all the videos that correspond
+//to a specific operaiton
+public List<Video> GetVideosForOperationID(long id)
+{
+List<Video> list = new List<Video>();
+
+
+using (MySqlConnection conn = GetConnection())
+{
+conn.Open();
+MySqlCommand cmd = new MySqlCommand(
+"select * from video WHERE video.operationID='" + id + "'", conn);
+using (MySqlDataReader reader = cmd.ExecuteReader())
+{
+while (reader.Read())
+{
+Video video = new Video();
+video.fullPath = reader.GetString("fullPath");
+video.size_bytes = reader.GetInt64("size_bytes");
+video.fileName = reader.GetString("fileName");
+video.duration = reader.GetInt64("duration_ms");
+video.timeStamp = (DateTime)reader.GetMySqlDateTime("timeStamp");
+video.type = reader.GetString("type");
+list.Add(video);
+}
+}
+}
+
+return list;
+
+}
+//this method returns the specific patient's monitoring file
+public PatientsMonitoringFile GetMonitoringFileForOperationID(long id)
+{
+
+PatientsMonitoringFile patientsFile = new PatientsMonitoringFile();
+using (MySqlConnection conn = GetConnection())
+{
+conn.Open();
+MySqlCommand cmd = new MySqlCommand(
+"select * from monitor_system_file "+
+"WHERE monitor_system_file.operationID='" + id + "'", conn);
+using (MySqlDataReader reader = cmd.ExecuteReader())
+{
+while (reader.Read())
+{
+
+patientsFile.fullPath = reader.GetString("fullPath");
+patientsFile.size_bytes = reader.GetInt64("size_bytes");
+patientsFile.fileName = reader.GetString("fileName");
+patientsFile.timeStamp = (DateTime)reader.GetMySqlDateTime("timeStamp");
+patientsFile.type = reader.GetString("type");
+}
+}
+}
+return patientsFile;
+
+}
+//this method returns all the audio files
+//that are linked to the specific operation
+public List<Audio> GetAudiosForOperationID(long id)
+{
+List<Audio> list = new List<Audio>();
+
+
+using (MySqlConnection conn = GetConnection())
+{
+conn.Open();
+MySqlCommand cmd = new MySqlCommand(
+"select * from audio WHERE audio.operationID='" + id + "'", conn);
+using (MySqlDataReader reader = cmd.ExecuteReader())
+{
+while (reader.Read())
+{
+Audio audio = new Audio();
+audio.fullPath = reader.GetString("fullPath");
+audio.size_bytes = reader.GetInt64("size_bytes");
+audio.fileName = reader.GetString("fileName");
+audio.duration = reader.GetInt64("duration_ms");
+audio.timeStamp = (DateTime)reader.GetMySqlDateTime("timeStamp");
+audio.type = reader.GetString("type");
+list.Add(audio);
+}
+}
+}
+
+return list;
+
+}
+//this method returns all the staff stored in the database
+public IEnumerable<Staff> GetAllStaff()
+{
+List<Staff> list = new List<Staff>();
+
+
+using (MySqlConnection conn = GetConnection())
+{
+conn.Open();
+MySqlCommand cmd = new MySqlCommand("SELECT * FROM staff", conn);
+using (MySqlDataReader reader = cmd.ExecuteReader())
+{
+while (reader.Read())
+{
+Staff staff = new Staff();
+staff.staffID = reader.GetInt32("staffID");
+staff.firstName = reader.GetString("firstName");
+staff.lastName = reader.GetString("lastName");
+staff.address = reader.GetString("address");
+staff.hiringDate = reader.GetDateTime("hiringDate");
+staff.phoneNo = reader.GetString("phoneNo");
+if (reader.IsDBNull(5))
+{
+staff.speciality = reader.GetString("speciality");
+}
+
+list.Add(staff);
+
+}
+}
+}
+
+return list;
+
+}
+
+//this method returns all the patients stored in the database
+public IEnumerable<Patient> GetAllPatients()
+{
+
+List<Patient> list = new List<Patient>();
+
+
+using (MySqlConnection conn = GetConnection())
+{
+conn.Open();
+MySqlCommand cmd = new MySqlCommand("SELECT * FROM patient", conn);
+using (MySqlDataReader reader = cmd.ExecuteReader())
+{
+while (reader.Read())
+{
+list.Add(new Patient()
+{
+patientID = reader.GetInt64("patientID"),
+firstName = reader.GetString("firstName"),
+lastName = reader.GetString("lastName"),
+address = reader.GetString("address"),
+postCode = reader.GetString("postCode"),
+phoneNo = reader.GetString("phoneNO")
+});
+}
+}
+}
+
+return list;
+}
+
+//this method returns a list of all the operating rooms 
+//given a hospital ID
+public List<OperatingRoom> GetAllRoomsForHospitalID(int hospitalID)
+{
+
+List<OperatingRoom> list = new List<OperatingRoom>();
+
+
+using (MySqlConnection conn = GetConnection())
+{
+conn.Open();
+MySqlCommand cmd = new MySqlCommand("SELECT * FROM hospital_operating_room"+
+" WHERE hospitalID='" + hospitalID + "'", conn);
+using (MySqlDataReader reader = cmd.ExecuteReader())
+{
+while (reader.Read())
+{
+list.Add(new OperatingRoom()
+{
+hospitalID = reader.GetInt32("hospitalID"),
+roomNO = reader.GetString("roomNO"),
+size = reader.GetInt32("size_m2")
+
+});
+}
+}
+}
+return list;
+
+}
+//this method takes as input a NewOperationFormViewModel
+//gets all the information and inserts it in the database
+public void InsertOperation(NewOperationFormViewModel model)
+{
+model.UploadedDate = new DateTime();
+model.UploadedDate = DateTime.Now;
+using (MySqlConnection conn = GetConnection())
+{
+conn.Open();
+//insert the operation to the database
+MySqlCommand cmd = conn.CreateCommand();
+cmd.CommandText = "INSERT INTO operation "+
+"(patientID,hospitalID,roomNO,dateStamp,"+
+"duration_ms,operationTypeID,uploadedDate) "+
+"VALUES (?patientID,?hospitalID,?roomNo,?date,"+
+"?maxDuration,?operationTypeID,?uploadedDate)";
+
+
+
+
+cmd.Parameters.AddWithValue("?patientID", model.patientID);
+cmd.Parameters.AddWithValue("?hospitalID", model.hospitalID);
+cmd.Parameters.AddWithValue("?roomNO", model.roomNo);
+var par1=model.date.ToString("yyyy-MM-dd HH:mm:ss");
+cmd.Parameters.AddWithValue("?date",par1);
+cmd.Parameters.AddWithValue("?maxDuration", model.maxDuration);
+cmd.Parameters.AddWithValue("?operationTypeID", model.operationTypeID);
+var par2=model.UploadedDate.ToString("yyyy-MM-dd HH:mm:ss");
+cmd.Parameters.AddWithValue("?uploadedDate", par2);
+cmd.ExecuteNonQuery();
+cmd.Parameters.Clear();
+
+long operationID=0;
+cmd.CommandText = "SELECT `AUTO_INCREMENT`from  "+
+"INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'sensor_fusionv1' AND"+
+"   TABLE_NAME   = 'operation'";
+using (MySqlDataReader reader = cmd.ExecuteReader())
+{
+while (reader.Read())
+{
+operationID = reader.GetInt64("AUTO_INCREMENT") - 1;
+}
+}
+
+if (model.videos!=null)
+{
+foreach (var video in model.videos)
+{
+cmd.CommandText = "INSERT INTO video "+
+"(operationID,size_bytes,timeStamp,type,duration_ms,fileName,fullPath) VALUES"+
+" (?operationID,?size_bytes,?timeStamp,?type,?duration,?fileName,?fullPath)";
+cmd.Parameters.AddWithValue("?operationID", operationID);
+cmd.Parameters.AddWithValue("?size_bytes", video.size_bytes);
+cmd.Parameters.AddWithValue("?timeStamp", video.timeStamp);
+cmd.Parameters.AddWithValue("?type", video.type);
+cmd.Parameters.AddWithValue("?duration", video.duration);
+cmd.Parameters.AddWithValue("?fileName", video.fileName);
+cmd.Parameters.AddWithValue("?fullPath", video.fullPath);
+
+cmd.ExecuteNonQuery();
+cmd.Parameters.Clear();
+}
+
+}
+if (model.audios != null)
+{
+foreach (var audio in model.audios)
+{
+Console.WriteLine(audio.fileName);
+cmd.CommandText = "INSERT INTO audio "+
+"(operationID,size_bytes,timeStamp,type,duration_ms,fileName,fullPath) VALUES"
++" (?operationID,?size_bytes,?timeStamp,?type,?duration,?fileName,?fullPath)";
+cmd.Parameters.AddWithValue("?operationID", operationID);
+cmd.Parameters.AddWithValue("?size_bytes", audio.size_bytes);
+cmd.Parameters.AddWithValue("?timeStamp", audio.timeStamp);
+cmd.Parameters.AddWithValue("?type", audio.type);
+cmd.Parameters.AddWithValue("?duration", audio.duration);
+cmd.Parameters.AddWithValue("?fileName", audio.fileName);
+cmd.Parameters.AddWithValue("?fullPath", audio.fullPath);
+
+
+
+
+cmd.ExecuteNonQuery();
+cmd.Parameters.Clear();
+
+}
+}
+if (model.patientsMonitoringFile != null)
+{
+cmd.CommandText = "INSERT INTO monitor_system_file "+
+"(operationID,size_bytes,timeStamp,type,fileName,fullPath) VALUES "+
+"(?operationID,?size_bytes,?timeStamp,?type,?fileName,?fullPath)";
+cmd.Parameters.AddWithValue("?operationID", operationID);
+var par1=model.patientsMonitoringFile.size_bytes;
+var par2=model.patientsMonitoringFile.timeStamp;
+var par3=model.patientsMonitoringFile.type;
+var par4=model.patientsMonitoringFile.fileName;
+var par5=model.patientsMonitoringFile.fullPath;
+cmd.Parameters.AddWithValue("?size_bytes", par1 );
+cmd.Parameters.AddWithValue("?timeStamp",par2 );
+cmd.Parameters.AddWithValue("?type",par3 );
+cmd.Parameters.AddWithValue("?fileName", par4);
+cmd.Parameters.AddWithValue("?fullPath", par5);
+cmd.ExecuteNonQuery();
+cmd.Parameters.Clear();
+}
+
+foreach (var id in model.staffIDs)
+{
+cmd.CommandText = "INSERT INTO operations_staff "+
+"(operationID,staffID) VALUES (?operationID,?staffID)";
+cmd.Parameters.AddWithValue("?staffID", id);
+cmd.Parameters.AddWithValue("?operationID", operationID);
+cmd.ExecuteNonQuery();
+cmd.Parameters.Clear();
+}
+}
+
+
+}
+}
+}
+\end{lstlisting}
+
+\section{File Storage Controller}
+
+\begin{lstlisting}
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Blob;
+using System.IO;
+using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Http;
+using System;
+using Microsoft.AspNetCore.Hosting;
+
+namespace SensorFusion.Controllers
+{
+public class BlobsController : Controller
+{
+CloudBlobClient blobClient;
+private IHostingEnvironment _env;
+
+//this is the constructor of the blobs class
+//It gets as input the IHostingEnvironment object
+public BlobsController(IHostingEnvironment env)
+{
+	_env = env;
+	var builder = new ConfigurationBuilder()
+		.SetBasePath(Directory.GetCurrentDirectory())
+		.AddJsonFile("appsettings.json");
+	IConfigurationRoot Configuration = builder.Build();
+	var firstPart="ConnectionStrings:sensorfusionstorage";
+	var connection=firstPart+"_AzureStorageConnectionString";
+	CloudStorageAccount storageAccount = CloudStorageAccount
+	.Parse(Configuration[connection]);
+	blobClient = storageAccount.CreateCloudBlobClient();
+}
+
+//this method return a CloudBlobContainer
+private CloudBlobContainer GetCloudBlobContainer(string blobName)
+{
+
+	CloudBlobContainer container = blobClient
+		.GetContainerReference(blobName);
+
+	return container;
+}
+
+
+//THIS METHOD IS CALLING THE GetCloudBlobContainer. 
+//So this method is the entry point to create the container.
+public async Task<ActionResult> CreateBlobContainer(string containerName)
+{
+	//Here we're calling the GetCloudBlobContainer method
+	// (which takes the container name and return the equivalent container)
+	CloudBlobContainer container = GetCloudBlobContainer(containerName);
+
+	//check if the container exists and create a new if it doesn't
+	ViewBag.Success = container.CreateIfNotExistsAsync().Result;
+
+	//Update the view bag with the name of the blob container
+	ViewBag.BlobContainerName = container.Name;
+	BlobContainerPermissions permissions = await container
+		.GetPermissionsAsync();
+	permissions.PublicAccess = BlobContainerPublicAccessType.Container;
+	await container.SetPermissionsAsync(permissions);
+
+
+	return View();
+}
+
+//this method gets as input a specific container name and a specific 
+//blob name and a specific file name and uplod it to azure storage
+public async Task UploadBlob(string containerN,string blobN,IFormFile file)
+{
+
+	//try to get the container with the specified name
+	CloudBlobContainer container = GetCloudBlobContainer(containerN);
+	//if there is no container, create a new one
+	if (! await container.ExistsAsync())
+	{
+		await CreateBlobContainer(containerN);
+	//try again to read the container
+	container = GetCloudBlobContainer(containerN);
+
+	}
+
+	//we just create the reference to the object
+	CloudBlockBlob blob = container.GetBlockBlobReference(blobN);
+
+	blob.UploadFromStreamAsync(file.OpenReadStream()).Wait();
+
+}
+
+//This method lists all the blobs in a specific container
+public ActionResult ListBlobs(string containerName)
+{
+
+	CloudBlobContainer container = GetCloudBlobContainer(containerName);
+
+	List<string> blobs = new List<string>();
+	BlobResultSegment resultSegment = container
+		.ListBlobsSegmentedAsync(null).Result;
+
+	foreach (IListBlobItem item in resultSegment.Results)
+	{
+		if (item.GetType() == typeof(CloudBlockBlob))
+		{
+			CloudBlockBlob blob = (CloudBlockBlob)item;
+			blobs.Add(blob.Name);
+		}
+		else if (item.GetType() == typeof(CloudPageBlob))
+		{
+			CloudPageBlob blob = (CloudPageBlob)item;
+			blobs.Add(blob.Name);
+		}
+		else if (item.GetType() == typeof(CloudBlobDirectory))
+		{
+			CloudBlobDirectory dir = (CloudBlobDirectory)item;
+			blobs.Add(dir.Uri.ToString());
+		}
+	}
+	return View(blobs);
+
+}
+
+//This method gets the full path of a specific container
+public string GetBlobFullPath(string containerName, string blobName)
+{
+	CloudBlobContainer container = GetCloudBlobContainer(containerName);
+	CloudBlockBlob blob = container.GetBlockBlobReference(blobName);
+	return blob.StorageUri.PrimaryUri.ToString();
+
+}
+
+//this method allows the calling method to download the whole container
+public string DownloadBlob(string containerN,string blobN,string Path)
+{
+
+	CloudBlobContainer container = GetCloudBlobContainer(containerN);
+
+	CloudBlockBlob blob = container.GetBlockBlobReference(blobN);
+
+	using (var fileStream = System.IO.File.OpenWrite(Path))
+	{
+		blob.DownloadToStreamAsync(fileStream).Wait();
+	}
+
+	return "success!";
+}
+//this methos deletes a blob from a given container
+public string DeleteBlob(string containerName,string blobName)
+{
+	CloudBlobContainer container = GetCloudBlobContainer(containerName);
+	CloudBlockBlob blob = container.GetBlockBlobReference(blobName);
+	blob.DeleteAsync().Wait();
+
+	return "success!";
+}
+public string DeleteContainer(string containerName)
+{
+	CloudBlobContainer container = GetCloudBlobContainer(containerName);
+	container.DeleteIfExistsAsync();
+
+	return "success!";
+
+}
+
+}
+}
+\end{lstlisting}
+
+
+\section{Media Utilities Controller }
+
+\begin{lstlisting}
+using MediaInfoLib;
+using Microsoft.AspNetCore.Hosting;
+using System;
+using System.IO;
+using System.Linq;
+
+namespace SensorFusion.Controllers
+{
+
+// this class is responsible for getting the metadata from 
+//the input files
+public class MediaUtilities
+{
+private IHostingEnvironment _env;
+string path;
+MediaInfo mi = new MediaInfo();
+
+public MediaUtilities(IHostingEnvironment env, string fileName)
+{
+	_env = env;
+	path = _env.WebRootPath + "\\TempFiles\\" + fileName;
+}
+
+//this method returns the duration of a video file
+public TimeSpan GetVideoDuration()
+{
+	mi.Open(path);
+	var videoInfo = new VideoInfo(mi);
+	var result= videoInfo.Duration;
+	mi.Close();
+	return result;
+}
+//this method returns the size of a video file in bytes
+public long GetVideoSize()
+{
+	mi.Open(path);
+	var videoInfo = new VideoInfo(mi);
+	long size = videoInfo.FileSize;
+	mi.Close();
+	return size;
+}
+//this method returns the video tagged date
+//which is the date that the video started to record
+public DateTime GetVideoTaggedDate()
+{
+	mi.Open(path);
+	var videoInfo = new VideoInfo(mi);
+	string[] taggedDate = videoInfo.TaggedDate.Split(' ');
+	string[] date = taggedDate[1].Split('-');
+	string[] time = taggedDate[2].Split(':');
+	var year=Int32.Parse(date[0]);
+	var month=Int32.Parse(date[1]);
+	var day=Int32.Parse(date[2]);
+	var hour=Int32.Parse(time[0]);
+	var minute=Int32.Parse(time[1]);
+	var second=Int32.Parse(time[2]);
+
+	DateTime fullDateTime;
+	fullDateTime=new DateTime(year,month,day,hour,minute,second);
+	mi.Close();
+	return fullDateTime;
+}
+
+//this method returns the video encoded date
+public DateTime GetVideoEncodedDate()
+{
+	mi.Open(path);
+	var videoInfo = new VideoInfo(mi);
+	string[] encodedDate = videoInfo.EncodedDate.Split(' ');
+	string[] date = encodedDate[1].Split('-');
+	string[] time = encodedDate[2].Split(':');
+	var year=Int32.Parse(date[0]);
+	var month=Int32.Parse(date[1]);
+	var day=Int32.Parse(date[2]);
+	var hour=Int32.Parse(time[0]);
+	var minute=Int32.Parse(time[1]);
+	var second=Int32.Parse(time[2]);
+	DateTime fullDateTime;
+	fullDateTime=new DateTime(year,month,day,hour,minute,second);
+	mi.Close();
+	return fullDateTime;
+}
+//this method prints all the metadata that can be extracted
+// from the video files
+public void PrintVideoAvailableProperties()
+{
+	mi.Open(path);
+	var videoInfo = new VideoInfo(mi);
+	mi.Option("Language", "raw");
+	Console.WriteLine(mi.Inform());
+}
+
+//this method gets and returns the last modified date
+//from an audio file
+public DateTime GetAudioLastModifiedTime()
+{
+	FileInfo file = new FileInfo(path);
+	DateTime timeStamp = file.LastWriteTime;
+	return timeStamp;
+}
+//this method returns the creation time 
+//from an audio file
+public DateTime GetAudioCreationTime()
+{
+	FileInfo file = new FileInfo(path);
+	DateTime timeStamp = file.CreationTime;
+	return timeStamp;
+}
+
+public DateTime GetAudioLastAccessTime()
+{
+	FileInfo file = new FileInfo(path);
+	DateTime timeStamp = file.LastAccessTime;
+	return timeStamp;
+}
+public DateTime GetAudioLastWriteTime()
+{
+
+	DateTime timeStamp = File.GetLastWriteTimeUtc(path);
+	return timeStamp;
+}
+
+
+//this method gets and returns the duration of a 
+//audio file
+public TimeSpan GetAudioDuration()
+{
+	mi.Open(path);
+	var audioInfo = new AudioInfo(mi);
+	var result = audioInfo.Duration;
+	mi.Close();
+	return result;
+}
+//this method gets and returns the size 
+// of an audio file
+public string GetAudioSize()
+{
+	mi.Open(path);
+	var audioInfo = new AudioInfo(mi);
+	var result = audioInfo.FileSize;
+	mi.Close();
+	return result;
+}
+//this method gets and returns the size 
+// of an audio file
+public string GetAudioStreamSize()
+{
+	mi.Open(path);
+	var audioInfo = new AudioInfo(mi);
+	var result = audioInfo.StreamSize;
+	mi.Close();
+	return result;
+}
+
+
+//this method examines all the dates that an audio files has 
+// and returns the earlierst one
+public DateTime GetAudioEarliestDate(string fileName)
+{
+	DateTime earliest = new DateTime(9000,1,1);
+	//earliest is later than GetAudioCreationTime
+	var audioCreation=earliest.CompareTo(GetAudioCreationTime()) > 0;
+	var audioLastAcc=earliest.CompareTo(GetAudioLastAccessTime())>0;
+	var audioLastMod=earliest.CompareTo(GetAudioLastModifiedTime())>0;
+	var audioLastWrite=earliest.CompareTo(GetAudioLastWriteTime())>0;
+
+	earliest = audioCreation ? GetAudioCreationTime() : earliest;
+	earliest = audioLastAcc ? GetAudioLastAccessTime() : earliest;
+	earliest = audioLastMod ? GetAudioLastModifiedTime() : earliest;
+	earliest = audioLastWrite ? GetAudioLastWriteTime() : earliest;
+
+	mi.Open(path);
+	var audioInfo = new AudioInfo(mi);
+	if (audioInfo.TaggedDate!=null && audioInfo.TaggedDate!="")
+	{
+	string[] taggedDate = audioInfo.TaggedDate.Split(' ');
+	string[] date = taggedDate[1].Split('-');
+	string[] time = taggedDate[2].Split(':');
+	var year=Int32.Parse(date[0]);
+	var month=Int32.Parse(date[1]);
+	var day=Int32.Parse(date[2]);
+	var hour=Int32.Parse(time[0]);
+	var minute=Int32.Parse(time[1]);
+	var second=Int32.Parse(time[2]);
+
+	DateTime TaggedDate=new DateTime(year,month,day,hour,minute,second);
+	earliest=(earliest.CompareTo(taggedDate)>0)?TaggedDate:earliest;
+
+	}
+	if(audioInfo.EncodedDate != null && audioInfo.EncodedDate!= "")
+	{
+	string[] encodedDate = audioInfo.EncodedDate.Split(' ');
+	string[] date = encodedDate[1].Split('-');
+	string[] time = encodedDate[2].Split(':');
+	var year=Int32.Parse(date[0]);
+	var month=Int32.Parse(date[1]);
+	var day=Int32.Parse(date[2]);
+	var hour=Int32.Parse(time[0]);
+	var minute=Int32.Parse(time[1]);
+	var second=Int32.Parse(time[2]);
+	DateTime EncodedDate;
+	EncodedDate = new DateTime(year,month,day,hour,minute,second);
+
+	earliest=(earliest.CompareTo(EncodedDate)>0)?EncodedDate:earliest;
+	}
+	mi.Close();
+	return earliest;
+}
+
+
+//this methods prints all the available metatada that 
+//can be extracted from the audio files
+public void PrintAudioAvailableProperties()
+{
+	mi.Open(path);
+	var videoInfo = new AudioInfo(mi);
+	mi.Option("Language", "raw");
+	Console.WriteLine(mi.Inform());
+}
+
+
+
+
+//this method examines all the available dates that exist 
+// in a file and returns the earliest one
+public DateTime GetFileEarliestDate(string fileName)
+{
+	DateTime earliest = new DateTime(9000, 1, 1);
+	var fileName=(GetDateFromFileName(fileName)
+	.CompareTo(new DateTime()) != 0);
+	earliest = fileName ? GetDateFromFileName(fileName) : earliest;
+
+	//earliest is later than GetAudioCreationTime
+	var audioCreation=earliest.CompareTo(GetAudioCreationTime()) > 0;
+	var audioLastAccesss=earliest.CompareTo(GetAudioLastAccessTime())>0;
+	var audioLastMod=earliest.CompareTo(GetAudioLastModifiedTime()) > 0;
+	var audioLastWrite=earliest.CompareTo(GetAudioLastWriteTime()) > 0;
+
+	earliest = audioCreation ? GetAudioCreationTime() : earliest;
+	earliest = audioLastAccesss ? GetAudioLastAccessTime() : earliest;
+	earliest = audioLastMod ? GetAudioLastModifiedTime() : earliest;
+	earliest = audioLastWrite ? GetAudioLastWriteTime() : earliest;
+	return earliest;
+}
+
+//this method get the date from a file
+public static DateTime GetDateFromFileName(string fileName)
+{
+	try
+	{
+	string[] datesArray = fileName.Split('_');
+	datesArray[0]=datesArray[0].Substring(datesArray[0].Length-4, 4);
+	datesArray[5] = datesArray[5].Substring(0, 2);
+	var year=Int32.Parse(datesArray[0]);
+	var month=Int32.Parse(datesArray[1]);
+	var day=Int32.Parse(datesArray[2]);
+	var hour=Int32.Parse(datesArray[3]);
+	var minute=Int32.Parse(datesArray[4]);
+	var second=Int32.Parse(datesArray[5]);
+
+
+		DateTime result;
+		result=DateTime(year,month,day,hour,minute,second);
+		return result;
+	}
+	catch (Exception)
+	{
+
+		return new DateTime();
+	}
+
+
+}
+
+public static void CleanTempFolder(IHostingEnvironment hostingEnvironment)
+{
+
+	System.IO.DirectoryInfo di;
+	di=new DirectoryInfo(hostingEnvironment.WebRootPath+"\\TempFiles");
+
+	foreach (FileInfo file in di.GetFiles())
+	{
+		file.Delete();
+	}
+}
+
+
+}
+
+
+//this class instantiates the MediaInfo object and holds all the 
+//metadata for audio and video files
+public class VideoInfo
+{
+public string Codec { get; private set; }
+public int Width { get; private set; }
+public int Heigth { get; private set; }
+public double FrameRate { get; private set; }
+public string FrameRateMode { get; private set; }
+public string ScanType { get; private set; }
+public TimeSpan Duration { get; private set; }
+public int Bitrate { get; private set; }
+public string AspectRatioMode { get; private set; }
+public double AspectRatio { get; private set; }
+public string TaggedDate { get; private set; }
+public string EncodedDate { get; private set; }
+public long FileSize { get; private set; }
+
+public VideoInfo(MediaInfo mi)
+{
+	Codec = mi.Get(StreamKind.Video, 0, "Format");
+	Width = int.Parse(mi.Get(StreamKind.Video, 0, "Width"));
+	Heigth = int.Parse(mi.Get(StreamKind.Video, 0, "Height"));
+	var dur=int.Parse(mi.Get(StreamKind.Video, 0, "Duration"));
+	Duration = TimeSpan.FromMilliseconds(dur);
+	Bitrate = int.Parse(mi.Get(StreamKind.Video, 0, "BitRate"));
+	AspectRatioMode =mi.Get(StreamKind.Video, 0, "AspectRatio/String"); 
+	AspectRatio = double.Parse(mi.Get(StreamKind.Video,0,"AspectRatio"));
+	FrameRate = double.Parse(mi.Get(StreamKind.Video, 0, "FrameRate"));
+	FrameRateMode = mi.Get(StreamKind.Video, 0, "FrameRate_Mode");
+	ScanType = mi.Get(StreamKind.Video, 0, "ScanType");
+	TaggedDate = mi.Get(StreamKind.Video, 0, "Tagged_Date");
+	EncodedDate = mi.Get(StreamKind.General, 0, "Encoded_Date");
+	FileSize = Int64.Parse(mi.Get(StreamKind.General, 0, "FileSize"));
+}
+}
+
+public class AudioInfo
+{
+public string Codec { get; private set; }
+public string CompressionMode { get; private set; }
+public string ChannelPositions { get; private set; }
+public TimeSpan Duration { get; private set; }
+public int Bitrate { get; private set; }
+public string BitrateMode { get; private set; }
+public int SamplingRate { get; private set; }
+public string TaggedDate { get; private set; }
+public string EncodedDate { get; private set; }
+public string FileSize { get; set; }
+public string StreamSize { get; set; }
+
+public AudioInfo(MediaInfo mi)
+{
+	Codec = mi.Get(StreamKind.Audio, 0, "Format");
+	var dur=int.Parse(mi.Get(StreamKind.Audio, 0, "Duration"));
+	Duration = TimeSpan.FromMilliseconds(dur);
+	Bitrate = int.Parse(mi.Get(StreamKind.Audio, 0, "BitRate"));
+	BitrateMode = mi.Get(StreamKind.Audio, 0, "BitRate_Mode");
+	CompressionMode = mi.Get(StreamKind.Audio, 0, "Compression_Mode");
+	ChannelPositions = mi.Get(StreamKind.Audio, 0, "ChannelPositions");
+	SamplingRate=int.Parse(mi.Get(StreamKind.Audio,0,"SamplingRate"));
+	TaggedDate = mi.Get(StreamKind.General, 0, "Tagged_Date");
+	EncodedDate = mi.Get(StreamKind.General, 0, "Encoded_Date");
+	FileSize = mi.Get(StreamKind.General, 0, "FileSize");
+	StreamSize = mi.Get(StreamKind.Audio, 0, "StreamSize");
+}
+}
+}
+\end{lstlisting}
+
 
 \chapter{System Manual}
 \label{app:system_manual}
- % description of document, e.g. type faces, TeX used, TeXmaker, packages and things used for figures. Like a computational details section.
-% e.g. http://tex.stackexchange.com/questions/63468/what-is-best-way-to-mention-that-a-document-has-been-typeset-with-tex#63503
 
-% Side note:
-%http://tex.stackexchange.com/questions/1319/showcase-of-beautiful-typography-done-in-tex-friends
+The system manual specifies the process that should be followed in order to continue the work begun by this project. The steps to continue working on this project are listed below:
+
+\begin{enumerate} 
+\item In the supporting zip file that is submitted with the report, the code for the application and for the database can be found.
+\item Download .NET Framework from \url{https://www.microsoft.com/net/download/thank-you/net472}
+\item  Download Internet Information Services (IIS) from \url{https://www.microsoft.com/en-us/download/details.aspx?id=48264}
+\item Download Visual Studio IDE from \url{https://visualstudio.microsoft.com/downloads/}
+\item Unzip the project files from ``Sensor-Fusion'' folder.
+\item From Visual Studio click File->Open->Project/Solution and select the file SensorFusion.sln
+\item All the files can be then edited and added using any editor of the developers choice.
+
+
+
+
+
+  
+\end{enumerate}
+
